@@ -8,7 +8,6 @@ import {
 import LandingPage from './pages/LandingPage';
 import SponsorPage from './pages/SponsorPage';
 import Application from './pages/Application';
-import './assets/fonts/fonts.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
