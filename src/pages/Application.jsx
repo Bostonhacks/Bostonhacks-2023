@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-dropdown-select";
 
 // Importing options for some of the questions.
-import { states, countries, majors, educationLevels } from "../components/ApplicationPageComponents/ApplicationOptions";
+import { ethnicities, genders, pronouns, states, countries, majors, educationLevels } from "../components/ApplicationPageComponents/ApplicationOptions";
 
 const Application = () => {
   const { register, handleSubmit, control } = useForm();
@@ -31,40 +31,34 @@ const Application = () => {
       <label>Race / Ethnicity:</label><br/>
       <small>Check all that apply</small>
       <div id="ethnicity-checkboxes">
-        <label>Asian Indian</label> <input type="checkbox" value="Asian Indian" {...register("ethnicity")}/>
-        <label>East Asian</label> <input type="checkbox" value="East Asian" {...register("ethnicity")}/>
-        <label>Guamanian / Chamorro</label> <input type="checkbox" value="Guamanian / Chamorro" {...register("ethnicity")}/>
-        <label>Black / African</label> <input type="checkbox" value="Black / African" {...register("ethnicity")}/>
-        <label>Middle Eastern</label> <input type="checkbox" value="Middle Eastern" {...register("ethnicity")}/>
-        <label>Native Hawaiian</label> <input type="checkbox" value="Native Hawaiian" {...register("ethnicity")}/>
-        <label>Hispanic / Latino / Spanish Origin</label> <input type="checkbox" value="Hispanic / Latino / Spanish Origin" {...register("ethnicity")}/>
-        <label>Native American / Alaskan Native</label> <input type="checkbox" value="Native American / Alaskan Native" {...register("ethnicity")}/>
-        <label>White</label> <input type="checkbox" value="White" {...register("ethnicity")}/>
-        <label>Pacific Islander</label> <input type="checkbox" value="Pacific Islander" {...register("ethnicity")}/>
+        {ethnicities.map((ethnicityOption) => {
+          return <>
+            <label>{ethnicityOption}</label> 
+            <input type="checkbox" value="{ethnicityOption}" {...register("ethnicity")}/>
+          </>
+        })}
       </div>
 
       <label>Gender:</label>
       <small>Check all that apply</small>
       <div id="gender-checkboxes">
-        <label>Man</label> <input type="checkbox" value="Man" {...register("gender")}/>
-        <label>Woman</label> <input type="checkbox" value="Woman" {...register("gender")}/>
-        <label>Binary</label> <input type="checkbox" value="Binary" {...register("gender")}/>
-        <label>Prefer to self-describe</label> <input type="checkbox" value="Prefer to self-describe" {...register("gender")}/>
-        <label>Prefer not to disclose</label> <input type="checkbox" value="Prefer not to disclose" {...register("gender")}/>
+        {genders.map((genderOption) => {
+          return <>
+            <label>{genderOption}</label> 
+            <input type="checkbox" value="{genderOption}" {...register("ethnicity")}/>
+          </>
+        })}
       </div>
 
       <label>Pronouns:</label>
       <small>Check all that apply</small>
       <div id="pronoun-checkboxes">
-        <label>He / Him / His</label> <input type="checkbox" value="He / Him / His" {...register("pronouns")}/>
-        <label>She / Her / Hers</label> <input type="checkbox" value="She / Her / Hers" {...register("pronouns")}/>
-        <label>They / Them / Theirs</label> <input type="checkbox" value="They / Them / Theirs" {...register("pronouns")}/>
-        <label>Ze / Hir / Hirs</label> <input type="checkbox" value="Ze / Hir / Hirs" {...register("pronouns")}/>
-        <label>Xe / Xem / Xyrs</label> <input type="checkbox" value="Xe / Xem / Xyrs" {...register("pronouns")}/>
-        <label>Ver / Vir / Vis</label> <input type="checkbox" value="Ver / Vir / Vis" {...register("pronouns")}/>
-        <label>Te / Tem / Ter</label> <input type="checkbox" value="Te / Tem / Ter" {...register("pronouns")}/>
-        <label>E / Eim / Eirs</label> <input type="checkbox" value="E / Eim / Eirs" {...register("pronouns")}/>
-        <label>Others</label> <input type="checkbox" value="Others" {...register("pronouns")}/>
+        {pronouns.map((pronounOption) => {
+          return <>
+            <label>{pronounOption}</label> 
+            <input type="checkbox" value="{pronounOption}" {...register("ethnicity")}/>
+          </>
+        })}
       </div>
 
       <label>Address:</label>

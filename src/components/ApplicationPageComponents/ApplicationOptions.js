@@ -1,3 +1,46 @@
+/*
+This file contains the options for certain application questions which require them.
+The questions they each apply to are indicated above their variable name.
+*/
+
+// Question: Ethnicity.
+const ethnicities = [
+    "Asian Indian",
+    "East Asian",
+    "Guamanian / Chamorro",
+    "Black / African",
+    "Middle Eastern",
+    "Native Hawaiian",
+    "Hispanic / Latino / Spanish Origin",
+    "Native American / Alaskan Native",
+    "White",
+    "Pacific Islander"
+]
+
+// Question: Gender.
+const genders = [
+    "Man",
+    "Woman",
+    "Binary",
+    "Non-Binary",
+    "Prefer not to self-describe",
+    "Prefer not to disclose",
+    "Others"
+]
+
+// Question: Pronouns.
+const pronouns = [
+    "He / Him / His",
+    "She / Her / Hers",
+    "They / Them / Theirs",
+    "Ze / Hir / Hirs",
+    "Xe / Xem / Xyrs",
+    "Ver / Vir / Vis",
+    "Te / Tem / Ter",
+    "E / Eim / Eirs",
+    "Others"
+]
+
 // Question: American State.
 const states = [
     "Outside US",
@@ -336,4 +379,4 @@ const educationLevels = [
     "Prefer not to answer"
 ]
 
-export { states, countries, majors, educationLevels };
+export { ethnicities, genders, pronouns, states, countries, majors, educationLevels };
