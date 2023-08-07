@@ -2,3 +2,18 @@
   font-family: 'misterpixel';
   src: url('./misterpixel.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'minecraft';
+  src: url('./minecraft.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ft88-reg';
+  src: url('./FT88-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ft88-bold';
+  src: url('./FT88-Bold.otf') format('opentype');
+}
