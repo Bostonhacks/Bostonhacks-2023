@@ -5,6 +5,9 @@ export default {
     extend: {
       fontFamily: {
         misterpixel: ['misterpixel', 'serif'],
+        minecraft: ['minecraft', 'serif'],
+        ft88: ['ft88-reg', 'serif'],
+        ft88b: ['ft88-bold', 'serif'],
       },
       colors: {
         'text-primary': "#000000" //"#FFFFFF" add this when we don't have a white background
