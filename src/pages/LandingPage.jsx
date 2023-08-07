@@ -1,5 +1,6 @@
-import FAQ from '../components/LandingPageComponents/FAQ';
 import Title from '../components/LandingPageComponents/Title';
+import FAQ from '../components/LandingPageComponents/FAQ';
+import CountDownTimer from '../components/CountdownTimerComponent/CountDownTimer';
 
 const LandingPage = () => {
   return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <div>
         <Title />
         <FAQ />
+        <CountDownTimer />
       </div>
     </div>
   );
