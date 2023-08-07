@@ -2,7 +2,7 @@ import Sign from '../../assets/images/SponsorPage/TitleSign.svg';
 
 const TitleSign = () => {
   return (
-    <div className='justify-center flex items-center m-[63px]'>
+    <div className='justify-center flex items-center mt-[63px]'>
         <img
             className="TitleSign"
             src={Sign}

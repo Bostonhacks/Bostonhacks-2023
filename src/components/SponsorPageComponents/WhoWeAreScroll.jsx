@@ -8,7 +8,7 @@ const WhoWeAreScroll = () => {
                 src={Scroll}
                 alt="WhoWeAreScroll"
             />
-            <div className='absolute w-[614px] h-[350px] text-xl text-center font-misterpixel text-[#965340] mt-[235px] mr-[114.8px] ml-[122px] mb-[187.32px]'>
+            <div className='absolute w-[614px] h-[350px] text-xl/[24px] text-center font-minecraft text-[#965340] mt-[235px] mr-[114.8px] ml-[122px] mb-[187.32px]'>
                 <p>BostonHacks brings together over 100 students for an exhilarating 36 hours to build awesome projects. In our past events, students had meaningful interactions with mentors, peers, and sponsors.<br />
                 <br />
                 A hackathon would be incomplete without new technology, advice, and ideas our sponsors offer, and we'd be eager to have you join us this coming fall!<br/>
