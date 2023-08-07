@@ -8,6 +8,7 @@ import {
 import LandingPage from './pages/LandingPage';
 import SponsorPage from './pages/SponsorPage';
 import Application from './pages/Application';
+import Login from './pages/Login';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
       <Route index element={<LandingPage />} />
       <Route path="sponsor" element={<SponsorPage />} />
       <Route path="application" element={<Application />} />
+      <Route path="login" element={<Login />} />
     </Route>
   )
 );
