@@ -3,17 +3,14 @@ import Footer from "../components/common/Footer"
 const LandingPage = () => {
   return (
     <div className="font-misterpixel">
-      <div className="text-[10rem]">
-        LandingPage
-      </div>
+      <div className="text-[10rem]">Landing Page</div>
 
       <div>
         <FAQ />
         <Footer/>
       </div>
     </div>
-    
-  )
+  );
 };
 
-export default LandingPage
+export default LandingPage;

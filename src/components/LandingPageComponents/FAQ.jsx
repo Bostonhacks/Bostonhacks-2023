@@ -37,18 +37,23 @@ const faq = [
 
 const Question = ({ question, answer }) => {
   const [expanded, setExpanded] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   const handleClick = () => {
-    setExpanded(!expanded);
+    //setExpanded(!expanded);
+    setAnimate(true);
     console.log("clicked")
   }
   return (
-    <li className="px-3 hover:cursor-pointer border-text-primary flex flex-row py-5" onClick={handleClick}>
-      <img src={expanded ? OpenChest : ClosedChest} alt="Closed Chest" className="w-[48px] h-[41px] mr-10" />
+    <li className="px-3 hover:cursor-pointer border-text-primary flex flex-row py-5 group" onClick={handleClick}>
+      <img src={expanded ? OpenChest : ClosedChest} alt="Closed Chest" 
+        className={`w-[48px] h-[41px] mr-10 ${animate && "animate-wiggle"}`} 
+        onAnimationEnd={() => { setExpanded(!expanded); setAnimate(false)}}
+      />
       <div className="flex flex-col mt-2">
         <h3 className="text-xl">{ question }</h3>
-
-        <div className={`pt-0 overflow-hidden transition-all duration-300 ease-in-out ${expanded ? "max-h-screen" : "max-h-0"}`}>
+ 
+        <div className={`pt-0 overflow-hidden transition-all duration-500 ease-in-out ${expanded ? "max-h-screen" : "max-h-0"}`}>
           <p className='mt-3'>{ answer }</p>
         </div>
         
