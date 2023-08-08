@@ -1,16 +1,14 @@
 import Title from '../components/LandingPageComponents/Title';
 import FAQ from '../components/LandingPageComponents/FAQ';
-import CountDownTimer from '../components/CountdownTimerComponent/CountDownTimer';
-
+import Footer from '../components/common/Footer';
 const LandingPage = () => {
   return (
     <div className="font-misterpixel">
       <div className="text-[10rem]">Landing Page</div>
-
       <div>
         <Title />
         <FAQ />
-        <CountDownTimer />
+        <Footer />
       </div>
     </div>
   );
