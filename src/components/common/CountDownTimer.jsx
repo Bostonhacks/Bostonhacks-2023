@@ -36,52 +36,61 @@ const CountDownTimer = () => {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="countdown flex items-center justify-center space-x-5 scale-150 my-10">
-
+    <div className="flex items-center justify-center space-x-5 scale-125 mt-10 mb-10">
       <div class="">
-        <div class="relative w-50 h-auto">
+        <div class="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} class="object-cover w-full h-full" />
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xl text-center">{formatTime(days)}</div>
+            <div class="text-white text-xs text-center md:text-base">
+              {formatTime(days)}
+            </div>
           </div>
         </div>
-        <p class="text-center">Days</p>
+        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+          DAYS
+        </p>
       </div>
 
-      <div>
-        <div class="relative w-50 h-50">
+      <div class="">
+        <div class="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} class="object-cover w-full h-full" />
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xl text-center">
+            <div class="text-white text-xs text-center md:text-base">
               {formatTime(hours)}
             </div>
           </div>
         </div>
-        <p class="text-center">Hours</p>
+        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+          HOURS
+        </p>
       </div>
 
-      <div>
-        <div class="relative w-50 h-50">
+      <div class="">
+        <div class="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} class="object-cover w-full h-full" />
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xl text-center">
+            <div class="text-white text-xs text-center md:text-base">
               {formatTime(minutes)}
             </div>
           </div>
         </div>
-        <p class="text-center">Minutes</p>
+        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+          MINUTES
+        </p>
       </div>
 
-      <div>
-        <div class="relative w-50 h-50">
+      <div class="">
+        <div class="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} class="object-cover w-full h-full" />
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xl text-center">
+            <div class="text-white text-xs text-center md:text-base">
               {formatTime(seconds)}
             </div>
           </div>
         </div>
-        <p class="text-center">Seconds</p>
+        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+          SECONDS
+        </p>
       </div>
     </div>
   );
