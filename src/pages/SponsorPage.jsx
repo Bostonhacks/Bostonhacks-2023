@@ -1,5 +1,12 @@
+import Footer from "../components/common/Footer";
+
 const SponsorPage = () => {
-  return <div>SponsorPage</div>;
+  return (
+    <div>
+      SponsorPage
+      <Footer />
+    </div>
+  );
 };
 
 export default SponsorPage;

@@ -1,6 +1,5 @@
 import FAQ from "../components/LandingPageComponents/FAQ"
-import CountDownTimer from "../components/CountdownTimerComponent/CountDownTimer"
-
+import Footer from "../components/common/Footer"
 const LandingPage = () => {
   return (
     <div className="font-misterpixel">
@@ -10,7 +9,7 @@ const LandingPage = () => {
 
       <div>
         <FAQ />
-        <CountDownTimer/>
+        <Footer/>
       </div>
     </div>
     
