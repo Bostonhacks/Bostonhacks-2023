@@ -15,8 +15,9 @@ export default {
       backgroundImage:
          {
            'sponsor_background': "url('/src/assets/images/SponsorPage/Background.svg')"
-         }
-    }
+         },
+    },
+    
   },
   plugins: [],
 };

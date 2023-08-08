@@ -14,6 +14,7 @@ const NatureBackground = () => {
                 className="Tree"
                 src={TreeSVG}
                 alt="Tree"
+                onDragStart={(event)=> event.preventDefault()}
                 />
             </div>
         </div>
