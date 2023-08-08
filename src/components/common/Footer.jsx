@@ -5,9 +5,9 @@ import instagram from "./svg/instagram.png";
 import twitter from "./svg/twitter.png";
 const Footer = () => {
   return (
-    <div class="">
+    <div class="mb-10 font-minecraft">
       <CountDownTimer />
-      <ul class="flex justify-center items-center space-x-5 scale-50">
+      <ul class="flex justify-center items-center space-x-5 scale-50 mb-10">
         <li>
           <a href="https://www.instagram.com/bostonhacks/">
           <img src={instagram} />
@@ -24,7 +24,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p class="text-center">Made with love by BostonHacks</p>
+      <p class="text-center font-black">Made with love by BostonHacks</p>
       <p class="text-center text-sm">Forest Pixel Art by Eder Muniz</p>
     </div>
   );
