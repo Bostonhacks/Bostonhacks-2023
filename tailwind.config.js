@@ -12,6 +12,18 @@ export default {
       colors: {
         'text-primary': '#000000', //"#FFFFFF" add this when we don't have a white background
       },
+      keyframes: {
+        wiggle: {
+          '0%': { transform: 'scale(1.0)' },
+          '50%': { transform: 'scale(1.2) rotate(-7deg)' },
+          '100%': { transform: 'scale(1.0)' },
+          '50%': { transform: 'rotate(-5deg) scale(1.2)' },
+          '20%, 75%': { transform: 'rotate(5deg) scale(1.2)'},
+        },
+      },
+      animation: {
+        wiggle: 'wiggle ease-out 0.3s',
+      }
     },
   },
   plugins: [],
