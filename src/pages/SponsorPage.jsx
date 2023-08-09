@@ -2,7 +2,8 @@ import TitleSign from '../components/SponsorPageComponents/BostonhacksSign';
 import WhoWeAreScroll from '../components/SponsorPageComponents/WhoWeAreScroll';
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
 import NatureBackground from '../components/SponsorPageComponents/NatureBackground';
-import PerksMoneyTitle from '../components/SponsorPageComponents/PerksMoneyTitle';
+import Perks from '../components/SponsorPageComponents/Perks';
+import SponsorFAQTitle from '../components/SponsorPageComponents/SponsorFAQTitle';
 
 const SponsorPage = () => {
   return (<div className='w-full h-100% bg-auto bg-sponsor_background flex flex-col relative'>
@@ -25,7 +26,8 @@ const SponsorPage = () => {
       </div>
     </div>
     <WhoWeAreScroll />
-    <PerksMoneyTitle perkAmount={1500} subHeading={"Sneak Peek"}/>
+    <SponsorFAQTitle />
+    <Perks/>
   </div>);
 };
 

@@ -17,6 +17,9 @@ export default {
            'sponsor_background': "url('/src/assets/images/SponsorPage/Background.svg')"
          },
     },
+    listStyleImage: {
+      goldKey: 'url("/src/assets/images/SponsorPage/PerksAssets/GoldKey.svg")',
+    },
     
   },
   plugins: [],
