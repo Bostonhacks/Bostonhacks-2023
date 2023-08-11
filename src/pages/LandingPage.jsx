@@ -1,4 +1,5 @@
 import FAQ from '../components/LandingPageComponents/FAQ';
+import Title from '../components/LandingPageComponents/Title';
 
 const LandingPage = () => {
   return (
@@ -6,6 +7,7 @@ const LandingPage = () => {
       <div className="text-[10rem]">Landing Page</div>
 
       <div>
+        <Title />
         <FAQ />
       </div>
     </div>
