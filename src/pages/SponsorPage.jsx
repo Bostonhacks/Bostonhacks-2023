@@ -1,10 +1,8 @@
-import { sponsorPageContainerStyle } from "../components/SponsorPageComponents/SponsorStyles";
 import PinkButton from "../components/SponsorPageComponents/SponsorButtons/PinkButton";
 
 const SponsorPage = () => {
   return (
-  <div 
-    style={sponsorPageContainerStyle}>
+  <div>
       <PinkButton buttonText="WHO ARE WE" />
   </div>)
 };
