@@ -1,5 +1,5 @@
-import FAQ from '../components/LandingPageComponents/FAQ';
-
+import FAQ from "../components/LandingPageComponents/FAQ"
+import Footer from "../components/common/Footer"
 const LandingPage = () => {
   return (
     <div className="font-misterpixel">
@@ -7,6 +7,7 @@ const LandingPage = () => {
 
       <div>
         <FAQ />
+        <Footer/>
       </div>
     </div>
   );
