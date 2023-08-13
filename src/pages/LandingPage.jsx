@@ -1,3 +1,4 @@
+
 import Title from '../components/LandingPageComponents/Title';
 import FAQ from '../components/LandingPageComponents/FAQ';
 import Footer from '../components/common/Footer';
