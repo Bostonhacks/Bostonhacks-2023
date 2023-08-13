@@ -43,13 +43,13 @@ const ChoosePerkButton = ({link}) => {
 const Perks = () => {
 
     return (
-        <div className="flex flex-row overflow-x-scroll gap-[80px]">
+        <div className="flex flex-row overflow-x-scroll gap-[80px] no-scrollbar">
             
-            <div className="items-center flex flex-col">
+            <div className="items-center flex flex-col ml-[80px]">
 
                 <PerksTitle perkAmount={500} subHeading={"Sneak Peak"} />
 
-                <div className="relative mt-[30px] mb-[16px] ml-[80px]">
+                <div className="relative mt-[30px] mb-[16px]">
                     <SmallScroll/>
                     <ul class="absolute top-1/2 left-[67px] -translate-y-1/2 space-y-4 list-image-goldKey text-[#834D29] font-minecraft text-[13px]/[13px] w-[221px]">
                         <li className="pl-3">General Email*</li>
