@@ -1,11 +1,11 @@
-import WhoAreWe from "../components/SponsorPageComponents/WhoAreWe/WhoAreWeTitle";
-import sponsorPageContainerStyle from "../components/SponsorPageComponents/SponsorStyles";
+import { sponsorPageContainerStyle } from "../components/SponsorPageComponents/SponsorStyles";
+import PinkButton from "../components/SponsorPageComponents/SponsorButtons/PinkButton";
 
 const SponsorPage = () => {
   return (
   <div 
-    style={{ sponsorPageContainerStyle }}>
-      <WhoAreWe/>
+    style={sponsorPageContainerStyle}>
+      <PinkButton buttonText="WHO ARE WE" />
   </div>)
 };
 

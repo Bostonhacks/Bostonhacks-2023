@@ -1,5 +1,5 @@
-import btnBackground from './sponsor_pink_btn.svg';
-import background from "./bg_gradient.svg"
+import btnBackground from './svgs/sponsor_pink_btn.svg';
+import background from "./svgs/bg_gradient.svg"
 
 export const sponsorPageContainerStyle = {
     display: 'flex', 
