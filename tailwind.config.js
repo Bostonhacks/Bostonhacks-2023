@@ -11,6 +11,7 @@ export default {
       },
       colors: {
         'text-primary': '#000000', //"#FFFFFF" add this when we don't have a white background
+        'text-secondary': '#965340',
       },
       keyframes: {
         wiggle: {
