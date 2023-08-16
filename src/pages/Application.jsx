@@ -1,4 +1,8 @@
 import React from "react";
+
+import { auth, addApplicationDoc } from "../firebase/firebase-config";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-dropdown-select";
 
@@ -6,10 +10,16 @@ import Select from "react-dropdown-select";
 import { ethnicities, genders, pronouns, states, countries, majors, educationLevels } from "../components/ApplicationPageComponents/ApplicationOptions";
 
 const Application = () => {
+  const [message, setMessage] = React.useState("");
+  const [user, loading] = useAuthState(auth);
   const { register, handleSubmit, control } = useForm();
 
   // Function runs on application form submission.
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log("started");
+    await addApplicationDoc(data, user.uid);
+    console.log("done");
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -23,7 +33,7 @@ const Application = () => {
       <input type="date" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("dateOfBirth", { required: true })} />
       
       <label>Email:</label>
-      <input placeholder="name@domain.com" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("email", { required: true })} />
+      <input placeholder="name@domain.com" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("formEmail", { required: true })} />
 
       <label>Phone Number:</label>
       <input type="number" placeholder="1234567890" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("phoneNumber", { required: true })} />
@@ -32,10 +42,10 @@ const Application = () => {
       <small>Check all that apply</small>
       <div id="ethnicity-checkboxes">
         {ethnicities.map((ethnicityOption) => {
-          return <>
+          return <div key={ethnicityOption}>
             <label>{ethnicityOption}</label> 
-            <input type="checkbox" value="{ethnicityOption}" {...register("ethnicity")}/>
-          </>
+            <input type="checkbox" value={ethnicityOption} {...register("ethnicity")}/>
+          </div>
         })}
       </div>
 
@@ -43,10 +53,10 @@ const Application = () => {
       <small>Check all that apply</small>
       <div id="gender-checkboxes">
         {genders.map((genderOption) => {
-          return <>
+          return <div key={genderOption}>
             <label>{genderOption}</label> 
-            <input type="checkbox" value="{genderOption}" {...register("ethnicity")}/>
-          </>
+            <input type="checkbox" value={genderOption} {...register("gender")}/>
+          </div>
         })}
       </div>
 
@@ -54,10 +64,10 @@ const Application = () => {
       <small>Check all that apply</small>
       <div id="pronoun-checkboxes">
         {pronouns.map((pronounOption) => {
-          return <>
+          return <div key={pronounOption}>
             <label>{pronounOption}</label> 
-            <input type="checkbox" value="{pronounOption}" {...register("ethnicity")}/>
-          </>
+            <input type="checkbox" value={pronounOption} {...register("pronouns")}/>
+          </div>
         })}
       </div>
 
@@ -75,7 +85,7 @@ const Application = () => {
         render={({ field }) => 
         <Select 
             options={ states.map((stateOption) => { 
-                return { label: stateOption, value: stateOption};
+                return { label: stateOption, value: stateOption };
             })}
             {...field}
         />}
@@ -88,7 +98,7 @@ const Application = () => {
         render={({ field }) => 
         <Select 
             options={ countries.map((countryOption) => { 
-                return { label: countryOption, value: countryOption};
+                return { label: countryOption, value: countryOption };
             })}
             {...field}
         />}
@@ -97,7 +107,8 @@ const Application = () => {
       <label>Zip Code:</label>
       <input type="number" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("zipCode", { required: true })} />
 
-      <input {...register("college", { required: true })} />
+      <label>College:</label>
+      <input className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("college", { required: true })} />
 
       <label>Graduation Year:</label>
       <input type="number" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" {...register("gradYear", { required: true })} />
@@ -128,7 +139,7 @@ const Application = () => {
         />}
       />
 
-      <input type="submit" />
+      <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit"/>
     </form>
   )
 };
