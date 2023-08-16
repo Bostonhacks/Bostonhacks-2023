@@ -88,7 +88,7 @@ export const addApplicationDoc = async(formData, uid) => {
     }
 
   } catch (err) {
-    console.error(err);
+    throw err;
   }
 
 }
