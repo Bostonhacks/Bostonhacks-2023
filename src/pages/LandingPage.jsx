@@ -1,7 +1,8 @@
 import FAQ from '../components/LandingPageComponents/FAQ';
 import Feliz from '../components/LandingPageComponents/Feliz';
 import ThemeBanner from '../components/LandingPageComponents/ThemeBanner';
-
+import Title from '../components/LandingPageComponents/Title';
+import Footer from '../components/common/Footer';
 const LandingPage = () => {
   return (
     <div className="font-misterpixel">
@@ -16,7 +17,9 @@ const LandingPage = () => {
         year waiting for you and your team to explore!
       </Feliz>
       <div>
+        <Title />
         <FAQ />
+        <Footer />
       </div>
     </div>
   );
