@@ -45,19 +45,20 @@ const Question = ({ question, answer }) => {
     console.log("clicked")
   }
   return (
-    <li className="px-3 hover:cursor-pointer border-text-primary flex flex-row py-5 group" onClick={handleClick}>
-      <img src={expanded ? OpenChest : ClosedChest} alt="Closed Chest" 
-        className={`w-[48px] h-[41px] mr-10 ${animate && "animate-wiggle"}`} 
-        onAnimationEnd={() => { setExpanded(!expanded); setAnimate(false)}}
-      />
+    <li className="px-3 hover:cursor-pointer border-text-primary flex flex-row py-5 group justify-between" onClick={handleClick}>
+
       <div className="flex flex-col mt-2">
-        <h3 className="text-xl">{ question }</h3>
+        <h3 className="text-lg md:text-xl">{ question }</h3>
  
         <div className={`pt-0 overflow-hidden transition-all duration-500 ease-in-out ${expanded ? "max-h-screen" : "max-h-0"}`}>
           <p className='mt-3'>{ answer }</p>
         </div>
         
       </div>
+      <img src={expanded ? OpenChest : ClosedChest} alt="Closed Chest" 
+        className={`w-[48px] h-[41px] ${animate && "animate-wiggle"}`} 
+        onAnimationEnd={() => { setExpanded(!expanded); setAnimate(false)}}
+      />
 
       
     </li>
@@ -83,7 +84,7 @@ const FAQColumn = ({ questionAnswers }) => {
 
 const FAQ = () => {
   return (
-    <section className="w-full flex flex-col items-center justify-center text-text-primary">
+    <section className="w-full flex flex-col items-center justify-center text-text-primary px-5 my-[10rem]">
       <div className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]">
         <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1">FAQ</h2>
         <img className="z-20 absolute" src={faq_title} alt="FAQ Button"/>
