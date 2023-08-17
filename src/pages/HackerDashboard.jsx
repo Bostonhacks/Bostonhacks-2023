@@ -46,6 +46,7 @@ const HackerDashboard = () => {
         Your Status: {application.status}
       </div>
 
+      {/* If application is not finished we navigate them to the form page */}
       {application.status === 'Not Started' && (
         <button onClick={() => navigate('')} 
         className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'>
