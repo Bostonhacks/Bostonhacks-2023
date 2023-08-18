@@ -10,17 +10,17 @@ const Footer = () => {
       <ul class="flex justify-center items-center space-x-5 scale-50 mb-10">
         <li>
           <a href="https://www.instagram.com/bostonhacks/">
-          <img src={instagram} />
+          <img src={instagram} class="hover:-translate-y-6 transition-all"/>
           </a>
         </li>
         <li>
           <a href="https://twitter.com/boston_hacks">
-          <img src={twitter} />
+          <img src={twitter} class="hover:-translate-y-6 transition-all"/>
           </a>
         </li>
         <li>
           <a href="https://www.facebook.com/bostonhacks/">
-          <img src={facebook} />
+          <img src={facebook} class="hover:-translate-y-6 transition-all"/>
           </a>
         </li>
       </ul>
