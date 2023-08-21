@@ -4,6 +4,9 @@ import ThemeBanner from '../components/LandingPageComponents/ThemeBanner';
 import Title from '../components/LandingPageComponents/Title';
 import Footer from '../components/common/Footer';
 import LandingNav from '../components/LandingPageComponents/LandingNav';
+import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
+import NatureBG from '../components/LandingPageComponents/NatureBG';
+
 const LandingPage = () => {
   return (
     <div
@@ -15,6 +18,10 @@ const LandingPage = () => {
     >
       <LandingNav />
       <Title />
+      <a href="/sponsor" className="z-50">
+        <SponsorButton />
+      </a>
+
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you
         scroll!

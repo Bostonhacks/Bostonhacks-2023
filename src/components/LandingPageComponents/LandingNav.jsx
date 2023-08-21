@@ -6,9 +6,11 @@ const LandingNav = () => {
   const [openBurger, setOpenBurger] = useState(false);
 
   return (
-    <div className="p-5 sticky top-0 z-[100000] w-[100vw]">
+    <div className="p-5 sticky top-0 z-[100000] w-[100vw] ">
       <div className="flex flex-row align-center  justify-between ">
-        <img src={Logo} alt="Bostonhacks Logo" height={34} width={39} />
+        <a href="/">
+          <img src={Logo} alt="Bostonhacks Logo" height={34} width={39} />
+        </a>
         <ul className="invisible sm:visible flex flex-row justify-around w-[45vw]">
           <li>
             <a

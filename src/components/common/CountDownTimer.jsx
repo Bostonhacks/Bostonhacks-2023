@@ -1,8 +1,8 @@
-import heartIcon from "../../assets/images/HeartTimer.png";
-import { useState, useEffect } from "react";
+import heartIcon from '../../assets/images/HeartTimer.png';
+import { useState, useEffect } from 'react';
 
 const CountDownTimer = () => {
-  const targetDate = new Date("2023-10-18 00:00:00").getTime();
+  const targetDate = new Date('2023-10-18 00:00:00').getTime();
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
