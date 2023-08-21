@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "bostonhacks-cacioepepe"
+  },
+  "targets": {
+    "bostonhacks-cacioepepe": {
+      "hosting": {
+        "production": [
+          "bostonhacks-cacioepepe"
+        ],
+        "staging": [
+          "bostonhacks-cacioepepe-staging"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
