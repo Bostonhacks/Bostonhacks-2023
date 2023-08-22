@@ -6,6 +6,7 @@ import Footer from '../components/common/Footer';
 import LandingNav from '../components/LandingPageComponents/LandingNav';
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
 import NatureBG from '../components/LandingPageComponents/NatureBG';
+import TrackModals from '../components/LandingPageComponents/TrackModals';
 
 const LandingPage = () => {
   return (
@@ -31,7 +32,7 @@ const LandingPage = () => {
         We have <span className="font-ft88b">three</span> special tracks this
         year waiting for you and your team to explore!
       </Feliz>
-
+      <TrackModals />
       <FAQ />
       <Footer />
     </div>
