@@ -31,7 +31,7 @@ const SponsorPage = () => {
           </div>
         </div>
         <SponsorButton />
-        <div className="mt-[209px] items-center flex-col flex">
+        <div className="mt-60 items-center flex-col flex">
           <h1 className="text-white font-minecraft text-center text-[25.6px]/[32px] tracking-[0.1em]">
             "BOSTONHACKS IS
             <br />
