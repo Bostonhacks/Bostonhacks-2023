@@ -7,7 +7,8 @@ import LandingNav from '../components/LandingPageComponents/LandingNav';
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
 import NatureBG from '../components/LandingPageComponents/NatureBG';
 import TrackModals from '../components/LandingPageComponents/TrackModals';
-
+import Schedule from '../components/LandingPageComponents/Schedule';
+import Sponsor from '../components/LandingPageComponents/Sponsor';
 const LandingPage = () => {
   return (
     <div
@@ -34,6 +35,8 @@ const LandingPage = () => {
       </Feliz>
       <TrackModals />
       <FAQ />
+      <Schedule/>
+      <Sponsor/>
       <Footer />
     </div>
   );
