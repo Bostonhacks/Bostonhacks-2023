@@ -26,7 +26,7 @@ const TrackModals = () => {
           alt="TracksTitleBG"
         />
       </div>
-      <div className="w-full flex flex-row items-center justify-center ">
+      <div className="w-full flex flex-row items-center justify-center">
         <div className="w-[75vw] flex flex-col md:flex-row  items-center justify-around">
           <button
             className="mt-[10vh] md:mt-0 "
