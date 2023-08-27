@@ -13,7 +13,7 @@ const TrackModals = () => {
   const [track3Open, setTrack3Open] = useState(false);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center z-50">
       <div className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]">
         <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1 text-text-primary">
           TRACKS
@@ -24,7 +24,7 @@ const TrackModals = () => {
           alt="TracksTitleBG"
         />
       </div>
-      <div className="w-full flex flex-row items-center justify-center ">
+      <div className="w-full flex flex-row items-center justify-center">
         <div className="w-[75vw] flex flex-col md:flex-row  items-center justify-around">
           <button
             className="mt-[10vh] md:mt-0 "
