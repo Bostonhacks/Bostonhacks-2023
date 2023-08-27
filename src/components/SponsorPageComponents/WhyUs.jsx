@@ -40,19 +40,21 @@ const WhySection = ({ data }) => {
             key={index} 
             className={`flex items-center p-4 ${ index % 2 === 1 ? 'flex-row-reverse' : ''}`}
             >
-            <div className={`flex-shrink-0 w-1/2`}>
-                <img
-                    src={expanded ? OpenChest : ClosedChest}
-                    alt="Closed Chest"
-                    className={`w-[48px] h-[41px] ${animate && 'animate-wiggle'}`}
-                    onAnimationEnd={() => {
-                    setExpanded(!expanded);
-                    setAnimate(false);
-                    }}
-                />
-                <h2 className="text-xl font-bold mb-2">{item.title}</h2>
-                <p>{item.description}</p>
-            </div>
+                <div className={`flex-shrink-0 w-1/2`}>
+                    <div className='flex items-center'>
+                        <img
+                            src={expanded ? OpenChest : ClosedChest}
+                            alt="Closed Chest"
+                            className={`w-[48px] h-[41px] ${animate && 'animate-wiggle'}`}
+                            onAnimationEnd={() => {
+                            setExpanded(!expanded);
+                            setAnimate(false);
+                            }}
+                        />
+                        <h2 className="text-xl font-bold mb-2">{item.title}</h2>
+                    </div>
+                    <p>{item.description}</p>
+                </div>
             </div>
         ))}
         </div>
