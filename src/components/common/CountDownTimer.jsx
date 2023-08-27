@@ -37,58 +37,58 @@ const CountDownTimer = () => {
 
   return (
     <div className="flex justify-center space-x-5 mt-10 mb-10">
-      <div class="">
-        <div class="relative w-15 h-15 md:w-20 md:h-20">
-          <img src={heartIcon} class="object-cover w-full h-full" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xs text-center md:text-base">
+      <div className="">
+        <div className="relative w-15 h-15 md:w-20 md:h-20">
+          <img src={heartIcon} className="object-cover w-full h-full" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white text-xs text-center md:text-base">
               {formatTime(days)}
             </div>
           </div>
         </div>
-        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
           DAYS
         </p>
       </div>
 
-      <div class="">
-        <div class="relative w-15 h-15 md:w-20 md:h-20">
-          <img src={heartIcon} class="object-cover w-full h-full" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xs text-center md:text-base">
+      <div className="">
+        <div className="relative w-15 h-15 md:w-20 md:h-20">
+          <img src={heartIcon} className="object-cover w-full h-full" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white text-xs text-center md:text-base">
               {formatTime(hours)}
             </div>
           </div>
         </div>
-        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
           HOURS
         </p>
       </div>
 
-      <div class="">
-        <div class="relative w-15 h-15 md:w-20 md:h-20">
-          <img src={heartIcon} class="object-cover w-full h-full" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xs text-center md:text-base">
+      <div className="">
+        <div className="relative w-15 h-15 md:w-20 md:h-20">
+          <img src={heartIcon} className="object-cover w-full h-full" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white text-xs text-center md:text-base">
               {formatTime(minutes)}
             </div>
           </div>
         </div>
-        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
           MINUTES
         </p>
       </div>
 
-      <div class="">
-        <div class="relative w-15 h-15 md:w-20 md:h-20">
-          <img src={heartIcon} class="object-cover w-full h-full" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-xs text-center md:text-base">
+      <div className="">
+        <div className="relative w-15 h-15 md:w-20 md:h-20">
+          <img src={heartIcon} className="object-cover w-full h-full" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white text-xs text-center md:text-base">
               {formatTime(seconds)}
             </div>
           </div>
         </div>
-        <p class="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
           SECONDS
         </p>
       </div>
