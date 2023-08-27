@@ -1,6 +1,8 @@
 const WhyUs = () => {
     return(
-        <div></div>
+        <div>
+            
+        </div>
     )
 }
 
