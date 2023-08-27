@@ -4,7 +4,6 @@ import track2 from '../../assets/images/LandingPage/track2.png';
 import track3 from '../../assets/images/LandingPage/track3.png';
 import Modal from '@mui/material/Modal';
 import TrackModal from './TrackModal';
-import TrackPage from '../../assets/images/LandingPage/TrackModalPage.png';
 import TracksTitleBG from '../../assets/images/LandingPage/TracksTitleBG.svg';
 
 const TrackModals = () => {
@@ -13,8 +12,11 @@ const TrackModals = () => {
   const [track3Open, setTrack3Open] = useState(false);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center z-50">
-      <div className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]">
+    <div className="w-full flex flex-col justify-center items-center">
+      <div
+        className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]"
+        id="tracks"
+      >
         <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1 text-text-primary">
           TRACKS
         </h2>
