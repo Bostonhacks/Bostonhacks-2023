@@ -1,7 +1,6 @@
 import React from 'react';
-import sparkle from '../svgs/sparkle.png';
-import btnBackground from '../svgs/sponsor_pink_btn.svg';
-
+import sparkle from '../../../assets/images/SponsorPage/sparkle.png';
+import btnBackground from '../../../assets/images/SponsorPage/sponsor_pink_btn.svg';
 
 const PinkButton = ({ buttonText }) => {
 
