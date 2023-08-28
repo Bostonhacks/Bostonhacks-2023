@@ -49,11 +49,10 @@ const SponsorPage = () => {
           </h2>
         </div>
       </div>
-      <PinkButton buttonText="WHO ARE WE" />
+      <PinkButton buttonText="WHO ARE WE" extraStyling="mt-[-180px]"/>
       <WhoWeAreScroll />
       <PinkButton buttonText="WHY US?" extraStyling="mt-[200px]" />
       <WhyUs />
-
       <SectionTitle extraStyling={'mb-16'} text={'SPONSOR'} />
       <Perks />
       <div className="flex justify-center items-center space-x-12 mx-72 mt-24">
@@ -136,7 +135,7 @@ const SponsorPage = () => {
       </div>
       <Footer />
     </div>
-  )
+  );
 };
 
 export default SponsorPage;
