@@ -1,14 +1,15 @@
 import { useState } from 'react';
 
-import WhyUsSign from '../../assets/images/SponsorPage/WhyUsSign.svg'
+import WhyUsSign from '../../assets/images/SponsorPage/WhyUsSign.svg';
+import FelizPlatform from '../../assets/images/SponsorPage/FelizPlatform.svg';
+import FelizPlatformPNG from '../../assets/images/SponsorPage/FelizPlatform.png';
 import OpenChest from '../../assets/images/BigTreasureChest_Open.png';
 import ClosedChest from '../../assets/images/BigTreasureChest_Closed.png';
 const whyUs = [
     [
         {
             title: 'Connect',
-            description:
-            'Give your API or product a test run before sending it out into the world. Show off a great framework or platform before it hits the market. Students are the ideal target for new tech. They will eagerly push your product to its limits, as well as offer suggestions on it and look to you for support.',
+            description:'Give your API or product a test run before sending it out into the world. Show off a great framework or platform before it hits the market. Students are the ideal target for new tech. They will eagerly push your product to its limits, as well as offer suggestions on it and look to you for support.',
         },
         {
             title: 'Recruit',
@@ -34,7 +35,7 @@ const WhySection = ({ data }) => {
         console.log('clicked');
     };
     return (
-        <div className="flex flex-col space-y-8 mx-20 font-minecraft">
+        <div className="flex flex-col space-y-8 mx-20 px-10 py-20 font-minecraft">
         {data.map((item, index) => (
             <div
             key={index} 
@@ -51,9 +52,9 @@ const WhySection = ({ data }) => {
                             setAnimate(false);
                             }}
                         />
-                        <h2 className="text-xl font-bold ml-4 pt-1">{item.title}</h2>
+                        <h2 className="text-2xl font-bold ml-4 pt-1">{item.title}</h2>
                     </div>
-                    <hr/>
+                    <hr className="w-75 h-1 mx-auto my-5 bg-[#3D3C6A] border-0 rounded"/>
                     <p>{item.description}</p>
                 </div>
             </div>
@@ -64,7 +65,7 @@ const WhySection = ({ data }) => {
 
 const WhyUs = () => {
     return(
-        <div className = "items-center flex flex-col text-white">
+        <div className = "items-center flex flex-col text-white font-minecraft py-20">
             <img 
                 src={WhyUsSign} 
                 alt='WhyUsSign'
@@ -72,6 +73,20 @@ const WhyUs = () => {
             />
 
             <WhySection data={whyUs[0]} reverse = {true}/>
+
+            <img 
+                src={FelizPlatformPNG} 
+                alt='FelizPlatformPNG'
+                className = "max-w-md"
+            />
+            <div className = "mb-20 items-center flex flex-col">
+                <h1 className = "text-2xl">Questions?</h1>
+                <br/>
+                <p className = "text-2xl">We welcome any questions or</p>
+                <p className = "text-2xl">special requests. Please email us at</p>
+                <h1 className = "font-misterpixel font-normal py-10 text-3xl">contact@bostonhacks.io</h1>
+                <br/>
+            </div>
             
         </div>
     )
