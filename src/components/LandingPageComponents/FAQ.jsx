@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import faq_title from '../../assets/images/faq_title.svg';
+import faq_title from '../../assets/images/TitleBG.svg';
 import OpenChest from '../../assets/images/BigTreasureChest_Open.png';
 import ClosedChest from '../../assets/images/BigTreasureChest_Closed.png';
 
