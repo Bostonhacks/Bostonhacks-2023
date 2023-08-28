@@ -1,17 +1,31 @@
 import React from 'react';
-import { pinkBtnBackgroundStyle, topSparkleStyle, bottomSparkleStyle, buttonTextStyle} from '../SponsorStyles';
 import sparkle from '../svgs/sparkle.png';
+import btnBackground from '../svgs/sponsor_pink_btn.svg';
+
 
 const PinkButton = ({ buttonText }) => {
+
+    const pinkBtnBackgroundStyle = {
+        backgroundImage: `url(${btnBackground})`,
+        backgroundSize: 'contain', 
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        padding: '16px',
+        display: 'flex',
+        justifyContent: 'center'
+    };
+    
     return (
-        <div style={{ position: 'relative', width: '350px' }}>
-            <img src={sparkle} alt="Image" style={topSparkleStyle} />
-            <div style={pinkBtnBackgroundStyle}>
-                <div style={buttonTextStyle}>
-                    {buttonText}
+        <div className="relative w-full justify-center flex-col items-center">                
+            <div className="relative w-1/3 mx-auto">
+                <img src={sparkle} alt="Image" className="w-50 absolute -top-10 left-0" />
+                <div style={pinkBtnBackgroundStyle}>
+                    <h1 className='font-misterpixel text-white text-[3vw] leading-[4.2vw]'>
+                        {buttonText}
+                    </h1>
                 </div>
+            <img src={sparkle} alt="Image" className="w-50 absolute right-0 -bottom-10"  />
             </div>
-            <img src={sparkle} alt="Image" style={bottomSparkleStyle} />
         </div>
     )
 }

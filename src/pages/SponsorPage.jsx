@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import PinkButton from "../components/SponsorPageComponents/SponsorButtons/PinkButton";
-
-const SponsorPage = () => {
-  return (
-  <div>
-      <PinkButton buttonText="WHO ARE WE" />
-  </div>)
-=======
 import TitleSign from '../components/SponsorPageComponents/BostonhacksSign';
 import WhoWeAreScroll from '../components/SponsorPageComponents/WhoWeAreScroll';
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
@@ -16,6 +7,7 @@ import SectionTitle from '../components/SponsorPageComponents/SectionTitle';
 import Stats from '../components/SponsorPageComponents/Stats';
 import Footer from '../components/common/Footer';
 import SponsorNav from '../components/SponsorPageComponents/SponsorNav';
+import PinkButton from '../components/SponsorPageComponents/SponsorButtons/PinkButton';
 
 const SponsorPage = () => {
   return (
@@ -56,7 +48,9 @@ const SponsorPage = () => {
           </h2>
         </div>
       </div>
+      <PinkButton buttonText="WHO ARE WE" />
       <WhoWeAreScroll />
+      <PinkButton buttonText="WHY US?" />
       <SectionTitle extraStyling={'mb-16'} text={'SPONSOR'} />
       <Perks />
       <div className="flex justify-center items-center space-x-12 mx-72 mt-24">
@@ -139,8 +133,7 @@ const SponsorPage = () => {
       </div>
       <Footer />
     </div>
-  );
->>>>>>> main
+  )
 };
 
 export default SponsorPage;
