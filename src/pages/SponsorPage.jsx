@@ -8,6 +8,7 @@ import Stats from '../components/SponsorPageComponents/Stats';
 import Footer from '../components/common/Footer';
 import SponsorNav from '../components/SponsorPageComponents/SponsorNav';
 import PinkButton from '../components/SponsorPageComponents/SponsorButtons/PinkButton';
+import WhyUs from '../components/SponsorPageComponents/WhyUs';
 
 const SponsorPage = () => {
   return (
@@ -50,7 +51,9 @@ const SponsorPage = () => {
       </div>
       <PinkButton buttonText="WHO ARE WE" />
       <WhoWeAreScroll />
-      <PinkButton buttonText="WHY US?" />
+      <PinkButton buttonText="WHY US?" extraStyling="mt-[200px]" />
+      <WhyUs />
+
       <SectionTitle extraStyling={'mb-16'} text={'SPONSOR'} />
       <Perks />
       <div className="flex justify-center items-center space-x-12 mx-72 mt-24">
