@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 import WhyUsSign from '../../assets/images/SponsorPage/WhyUsSign.svg';
-import FelizPlatform from '../../assets/images/SponsorPage/FelizPlatform.svg';
 import FelizPlatformPNG from '../../assets/images/SponsorPage/FelizPlatform.png';
 import OpenChest from '../../assets/images/BigTreasureChest_Open.png';
-import ClosedChest from '../../assets/images/BigTreasureChest_Closed.png';
+
 const whyUs = [
     [
         {
@@ -25,32 +24,19 @@ const whyUs = [
 
 
 const WhySection = ({ data }) => {
-
-    const [expanded, setExpanded] = useState(false);
-    const [animate, setAnimate] = useState(false);
-
-    const handleClick = () => {
-        //setExpanded(!expanded);
-        setAnimate(true);
-        console.log('clicked');
-    };
     return (
         <div className="flex flex-col space-y-8 mx-20 px-10 py-20 font-minecraft">
         {data.map((item, index) => (
             <div
             key={index} 
-            className={`flex items-center p-4 ${ index % 2 === 1 ? 'flex-row-reverse text-right' : ''}`}
+            className={`flex items-center p-4 ${ index % 2 === 1 ? 'flex-row-reverse text-left' : ''}`}
             >
                 <div className={`flex-shrink-0 w-3/5 text-xl`}>
                     <div className='flex items-center mb-2'>
                         <img
-                            src={expanded ? OpenChest : ClosedChest}
+                            src={OpenChest}
                             alt="Closed Chest"
-                            className={`w-[48px] h-[41px] ${animate && 'animate-wiggle'}`}
-                            onAnimationEnd={() => {
-                            setExpanded(!expanded);
-                            setAnimate(false);
-                            }}
+                            className={`w-[48px] h-[41px]`}
                         />
                         <h2 className="text-2xl font-bold ml-4 pt-1">{item.title}</h2>
                     </div>
