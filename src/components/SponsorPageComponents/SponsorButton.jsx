@@ -13,7 +13,7 @@ const SponsorButton = () => {
 
   return (
     <div className="justify-center flex mt-[27.8px] z-50">
-      <button onClick={handleClick}>
+      <button className="z-50" onClick={handleClick}>
         <img
           src={image}
           onMouseOver={() => setImage(HoverButtonState)}
