@@ -34,14 +34,14 @@ const WhySection = ({ data }) => {
         console.log('clicked');
     };
     return (
-        <div className="flex flex-col space-y-4 py-5 font-minecraft">
+        <div className="flex flex-col space-y-8 mx-20 font-minecraft">
         {data.map((item, index) => (
             <div
             key={index} 
-            className={`flex items-center p-4 ${ index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+            className={`flex items-center p-4 ${ index % 2 === 1 ? 'flex-row-reverse text-right' : ''}`}
             >
-                <div className={`flex-shrink-0 w-1/2`}>
-                    <div className='flex items-center'>
+                <div className={`flex-shrink-0 w-3/5 text-xl`}>
+                    <div className='flex items-center mb-2'>
                         <img
                             src={expanded ? OpenChest : ClosedChest}
                             alt="Closed Chest"
@@ -51,8 +51,9 @@ const WhySection = ({ data }) => {
                             setAnimate(false);
                             }}
                         />
-                        <h2 className="text-xl font-bold mb-2">{item.title}</h2>
+                        <h2 className="text-xl font-bold ml-4 pt-1">{item.title}</h2>
                     </div>
+                    <hr/>
                     <p>{item.description}</p>
                 </div>
             </div>

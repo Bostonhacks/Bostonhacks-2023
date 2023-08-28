@@ -18,7 +18,6 @@ const SponsorPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
-      <WhyUs />
       <SponsorNav />
       <NatureBackground />
       <div className="left-0 right-0 absolute">
@@ -50,6 +49,7 @@ const SponsorPage = () => {
         </div>
       </div>
       <WhoWeAreScroll />
+      <WhyUs />
       <SectionTitle extraStyling={'mb-16'} text={'SPONSOR'} />
       <Perks />
       <div className="flex justify-center items-center space-x-12 mx-72 mt-24">
