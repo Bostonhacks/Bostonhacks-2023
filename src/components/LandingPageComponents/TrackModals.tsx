@@ -29,7 +29,7 @@ const TrackModals = () => {
       <div className="w-full flex flex-row items-center justify-center">
         <div className="w-[75vw] flex flex-col md:flex-row  items-center justify-around">
           <button
-            className="mt-[10vh] md:mt-0 "
+            className="mt-[10vh] md:mt-0 z-50"
             onClick={() => {
               setTrack1Open(true);
             }}
@@ -37,7 +37,7 @@ const TrackModals = () => {
             <img src={track1} alt="track 1" />
           </button>
           <button
-            className="mt-[10vh] md:mt-0"
+            className="mt-[10vh] md:mt-0 z-50"
             onClick={() => {
               setTrack2Open(true);
             }}
@@ -45,7 +45,7 @@ const TrackModals = () => {
             <img src={track2} alt="track 2" />
           </button>
           <button
-            className="mt-[10vh] md:mt-0"
+            className="mt-[10vh] md:mt-0 z-50"
             onClick={() => {
               setTrack3Open(true);
             }}
