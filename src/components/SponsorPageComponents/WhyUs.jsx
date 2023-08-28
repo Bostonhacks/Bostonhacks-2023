@@ -27,8 +27,9 @@ const WhyUs = () => {
                         <img src={treasureChest} alt="Image" className="pr-4 w-15 h-12" />
                     </div>
                 </div>
-                <div className="mt-8 w-full text-right flex space-x-3 w-[930px] mt-[100px] pl-[50px]">
-                    <h1 className="text-[24px] leading-[1] font-minecraft text-white">
+
+                <div className="mt-8 text-right flex space-x-3 w-[930px] ">
+                    <h1 className="text-[24px] leading-[1] font-minecraft text-white pr-[10px] pl-[50px]">
                         Resumes are two-dimensional (literally). Interviews give only a small snapshot of an individual’s abilities. By watching a project evolve over a hackathon, you can get a much better picture of a candidate. Plus, you’ll have access to a group of students that are extraordinarily passionate about what they do, and a friendly environment to interact with them in.
                     </h1>
                 </div>
