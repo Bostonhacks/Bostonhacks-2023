@@ -4,6 +4,7 @@ import ThemeBanner from '../components/LandingPageComponents/ThemeBanner';
 import Title from '../components/LandingPageComponents/Title';
 import Footer from '../components/common/Footer';
 import LandingNav from '../components/LandingPageComponents/LandingNav';
+import ApplyButton from "../components/LandingPageComponents/ApplyButton";
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
 import NatureBG from '../components/LandingPageComponents/NatureBG';
 import TrackModals from '../components/LandingPageComponents/TrackModals';
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <NatureBG />
       <LandingNav />
       <Title />
+      <ApplyButton />
       <SponsorButton />
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you
