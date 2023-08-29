@@ -7,6 +7,8 @@ import LandingNav from '../components/LandingPageComponents/LandingNav';
 import SponsorButton from '../components/SponsorPageComponents/SponsorButton';
 import NatureBG from '../components/LandingPageComponents/NatureBG';
 import TrackModals from '../components/LandingPageComponents/TrackModals';
+import Schedule from '../components/LandingPageComponents/Schedule';
+import Sponsor from '../components/LandingPageComponents/Sponsor';
 
 const LandingPage = () => {
   return (
@@ -17,12 +19,10 @@ const LandingPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
+      <NatureBG />
       <LandingNav />
       <Title />
-      <a href="/sponsor" className="z-50">
-        <SponsorButton />
-      </a>
-
+      <SponsorButton />
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you
         scroll!
@@ -34,6 +34,8 @@ const LandingPage = () => {
       </Feliz>
       <TrackModals />
       <FAQ />
+      <Schedule />
+      <Sponsor />
       <Footer />
     </div>
   );
