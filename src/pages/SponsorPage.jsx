@@ -49,7 +49,7 @@ const SponsorPage = () => {
           </h2>
         </div>
       </div>
-      <PinkButton buttonText="WHO ARE WE" extraStyling="mt-[-180px]"/>
+      <PinkButton buttonText="WHO ARE WE" extraStyling="mt-[-180px]" />
       <WhoWeAreScroll />
       <PinkButton buttonText="WHY US?" extraStyling="mt-[200px]" />
       <WhyUs />
