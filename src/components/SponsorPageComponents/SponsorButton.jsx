@@ -12,14 +12,16 @@ const SponsorButton = () => {
   };
 
   return (
-    <div className="justify-center flex mt-[27.8px] z-50">
+    <div className="justify-center flex mt-[22px] lg:mt-[27.8px] z-50">
       <button className="z-50" onClick={handleClick}>
         <img
           src={image}
           onMouseOver={() => setImage(HoverButtonState)}
           onMouseLeave={() => setImage(InitialButtonState)}
           onMouseDown={() => setImage(ClickedButtonState)}
+          onTouchStart={() => setImage(ClickedButtonState)}
           onMouseUp={() => setImage(HoverButtonState)}
+          onTouchEnd={() => setImage(HoverButtonState)}
           onDragStart={(event) => event.preventDefault()}
         />
       </button>

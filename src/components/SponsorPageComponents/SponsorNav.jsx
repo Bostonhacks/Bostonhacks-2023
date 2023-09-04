@@ -15,7 +15,7 @@ const SponsorNav = () => {
           <li>
             <a
               className="text-white font-minecraft cursor-pointer hover:text-gray-400"
-              href="#tracks"
+              href="#WhoWeAre"
             >
               WHO ARE WE?
             </a>
@@ -23,7 +23,7 @@ const SponsorNav = () => {
           <li>
             <a
               className="text-white font-minecraft cursor-pointer hover:text-gray-400"
-              href="#faq"
+              href="#Sponsor"
             >
               SPONSOR
             </a>
@@ -31,7 +31,7 @@ const SponsorNav = () => {
           <li>
             <a
               className="text-white font-minecraft cursor-pointer hover:text-gray-400"
-              href="#schedule"
+              href="#Stats"
             >
               STATS
             </a>
@@ -39,14 +39,14 @@ const SponsorNav = () => {
           <li>
             <a
               className="text-white font-minecraft cursor-pointer hover:text-gray-400"
-              href="#sponsors"
+              href="#Reviews"
             >
               REVIEWS
             </a>
           </li>
         </ul>
         <img
-          className="cursor-pointer sm:hidden"
+          className="cursor-pointer sm:hidden -mt-8"
           src={openBurger ? OpenBurger : ClosedBurger}
           alt="burger"
           onClick={() => {
