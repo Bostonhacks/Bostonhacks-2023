@@ -26,25 +26,29 @@ const whyUs = [
 
 const WhySection = ({ data }) => {
   return (
-    <div className="flex flex-col space-y-8 mx-20 px-10 py-20 font-minecraft">
+    <div className="flex flex-col lg:space-y-8 lg:mx-20 lg:px-10 lg:py-20 font-minecraft">
+      
       {data.map((item, index) => (
         <div
           key={index}
-          className={`flex items-center p-4 ${
-            index % 2 === 1 ? 'flex-row-reverse text-left' : ''
+          className={`flex items-center mx-6 lg:mx-0 lg:p-4 ${
+            index % 2 === 1 ? 'lg:flex-row-reverse lg:text-left' : ''
           }`}
         >
-          <div className={`flex-shrink-0 w-3/5 text-xl`}>
-            <div className="flex items-center mb-2">
+          <div className={`lg:flex-shrink-0 lg:w-3/5 text-xl`}>
+            {index == 0 && <hr className="w-75 h-1 mx-auto bg-[#3D3C6A] border-0 rounded lg:hidden mb-0.5" />}
+            <div className={`mx-4 flex items-center mb-2.5 lg:mb-2 ${index % 2 == 1 ? 'justify-end' : ''}`}>
               <img
                 src={OpenChest}
-                alt="Closed Chest"
-                className={`w-[48px] h-[41px]`}
+                alt="Open Chest"
+                className={`w-[26px] mt-2 lg:mt-0 lg:w-[48px] lg:h-[41px] ${index % 2 == 1 ? 'order-last ml-4' : ''}`}
               />
-              <h2 className="text-2xl font-bold ml-4 pt-1">{item.title}</h2>
+              <h2 className="text-[11px] lg:text-2xl font-bold ml-3 lg:ml-4 pt-1">{item.title}</h2>
             </div>
-            <hr className="w-75 h-1 mx-auto my-5 bg-[#3D3C6A] border-0 rounded" />
-            <p>{item.description}</p>
+            <hr className="min-[320px]:hidden lg:block w-75 h-1 mx-auto my-5 bg-[#3D3C6A] border-0 rounded" />
+            <hr className="w-75 h-1 mx-auto mb-4 bg-[#736DAB] opacity-20 border-0 rounded lg:hidden" /> {/* Mobile Border */}
+            <p className='mx-4 text-[10px]/[10px] lg:text-[24px]/[24px]'>{item.description}</p>
+            <hr className="w-75 h-1 mx-auto bg-[#3D3C6A] mt-5 border-0 rounded lg:hidden mb-0.5" /> {/* Mobile Border */}
           </div>
         </div>
       ))}
@@ -59,16 +63,14 @@ const WhyUs = () => {
 
       <WhySection data={whyUs[0]} reverse={true} />
 
-      <img src={FelizPlatformPNG} alt="FelizPlatformPNG" className="max-w-md" />
-      <div className="mb-20 items-center flex flex-col">
-        <h1 className="text-2xl">Questions?</h1>
-        <br />
-        <p className="text-2xl">We welcome any questions or</p>
-        <p className="text-2xl">special requests. Please email us at</p>
-        <h1 className="font-misterpixel font-normal py-10 text-3xl">
+      <img src={FelizPlatformPNG} alt="FelizPlatformPNG" className="max-w-md mt-12 w-[127px] lg:w-auto lg:mt-0" />
+      <div className="lg:mb-20 items-center flex flex-col">
+        <h1 className="text-xs lg:text-2xl mb-3 lg:6">Questions?</h1>
+        <p className="text-xs lg:text-2xl">We welcome any questions or</p>
+        <p className="text-xs lg:text-2xl">special requests. Please email us at</p>
+        <h1 className="font-misterpixel font-normal pt-2 lg:py-10 text-sm lg:text-3xl">
           contact@bostonhacks.io
         </h1>
-        <br />
       </div>
     </div>
   );

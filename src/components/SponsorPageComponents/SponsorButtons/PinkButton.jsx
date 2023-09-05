@@ -15,15 +15,15 @@ const PinkButton = ({ buttonText, extraStyling }) => {
     };
     
     return (
-        <div className={`relative w-full justify-center items-center ${extraStyling}`}>                
-            <div className="relative w-1/3 mx-auto">
-                <img src={sparkle} alt="Image" className="w-50 absolute -top-10 left-0" />
-                <div style={pinkBtnBackgroundStyle}>
-                    <h1 className='font-misterpixel text-white text-[3vw] leading-[4.2vw]'>
+        <div className={`relative w-full justify-center items-center ${extraStyling}`} id='WhoWeAre'>                
+            <div className="relative w-[73%] lg:w-1/3 mx-auto">
+                <img src={sparkle} alt="Image" className="w-[42px] lg:w-auto absolute -top-10 left-0" />
+                <div style={pinkBtnBackgroundStyle} className='h-[58px] lg:h-auto items-center'>
+                    <h1 className='font-misterpixel text-white text-[30px]/[70px] lg:text-[3vw] leading-[4.2vw]'>
                         {buttonText}
                     </h1>
                 </div>
-            <img src={sparkle} alt="Image" className="w-50 absolute right-0 -bottom-10"  />
+            <img src={sparkle} alt="Image" className="w-[42px] lg:w-auto absolute right-0 -bottom-10"  />
             </div>
         </div>
     )
