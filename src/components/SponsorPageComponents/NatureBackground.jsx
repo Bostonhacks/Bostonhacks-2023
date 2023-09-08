@@ -16,7 +16,7 @@ const NatureBackground = () => {
                 src={BackgroundMobile}
                 alt="NatureBackgroundMobile"
             />
-            <div className='absolute right-0 bottom-24 lg:bottom-0 w-2/5 lg:w-auto'>
+            <div className='absolute right-0 bottom-24 lg:bottom-0 w-2/5 lg:w-auto z-0'>
                 <img
                 className="Tree"
                 src={TreeSVG}

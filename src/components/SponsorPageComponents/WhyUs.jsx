@@ -58,7 +58,7 @@ const WhySection = ({ data }) => {
 
 const WhyUs = () => {
   return (
-    <div className="items-center flex flex-col text-white font-minecraft py-20">
+    <div className="items-center flex flex-col text-white font-minecraft py-20 z-10">
       {/* <img src={WhyUsSign} alt="WhyUsSign" className="max-w-md" /> */}
 
       <WhySection data={whyUs[0]} reverse={true} />

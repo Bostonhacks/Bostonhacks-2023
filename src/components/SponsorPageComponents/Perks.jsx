@@ -49,7 +49,7 @@ const ChoosePerkButton = ({ link }) => {
 
 const Perks = () => {
   return (
-    <div>
+    <div className='z-10'>
         <div className="flex flex-col lg:flex-row lg:overflow-x-scroll lg:gap-[80px] lg:no-scrollbar">
         <div className="items-center flex flex-col lg:ml-[80px]">
           <PerksTitle perkAmount={500} subHeading={'Sneak Peak'} />
