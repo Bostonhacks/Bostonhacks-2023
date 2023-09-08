@@ -5,6 +5,7 @@ import ClosedChest from '../../assets/images/BigTreasureChest_Closed.png';
 import faqMiddleCloud from '../../assets/images/LandingPage/Background/cloud_faq_middle.svg';
 import faqLeftCloud from '../../assets/images/LandingPage/Background/cloud_faq_left.svg';
 import faqRightCloud from '../../assets/images/LandingPage/Background/cloud_faq_right.svg';
+import chestIsland from '../../assets/images/LandingPage/Background/chestIsland.svg';
 const faq = [
   [
     {
@@ -89,16 +90,22 @@ const FAQColumn = ({ questionAnswers }) => {
 
 const FAQ = () => {
   return (
+    <div>
+      <div className='flex justify-end md:hidden mt-10'>
+        <img src={chestIsland} alt="chestIsland" className='h-64'/>
+      </div>
     <section
       id="faq"
       className="w-full flex flex-col items-center justify-center text-text-primary px-5 my-[10rem]"
-    >
+      >
       <div className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]">
         <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1">
           FAQ
         </h2>
         <img className="z-20 absolute" src={faq_title} alt="FAQ Button" />
         <img src={faqMiddleCloud} alt="clouds" className='absolute bottom-20 left-60 max-md:left-20 max-md:-top-20'/>
+        <div className='overflow-hidden'>
+        </div>
       </div>
       {/* <div className="mt-[5rem] w-full flex flex-1 flex-col justify-between md:flex-row"> */}
         <img src={faqLeftCloud} alt="clouds" className='absolute z-10 left-0 max-sm:hidden'/>
@@ -111,6 +118,7 @@ const FAQ = () => {
         <div className="border-b-4 border-text-primary md:hidden" />
       </div>
     </section>
+      </div>
   );
 };
 
