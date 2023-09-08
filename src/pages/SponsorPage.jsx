@@ -14,11 +14,11 @@ import Reviews from '../components/SponsorPageComponents/Reviews';
 const SponsorPage = () => {
   return (
     <div
-      className="w-full h-100% bg-auto bg-sponsor_background flex flex-col relative overflow-x-hidden"
-      style={{
-        background:
-          'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
-      }}
+      className="bg-auto bg-sponsor_background bg-no-repeat lg:bg-cover flex flex-col relative overflow-x-hidden"
+      // style={{
+      //   background:
+      //     'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
+      // }}
     >
       <SponsorNav />
       <NatureBackground />
@@ -34,7 +34,7 @@ const SponsorPage = () => {
           </div>
         </div>
         <SponsorButton />
-        <div className="mt-44 lg:mt-60 items-center flex-col flex mb-80 lg:mb-[426px]">
+        <div className="mt-44 lg:mt-60 items-center flex-col flex mb-80 lg:mb-[426px] z-10">
           <h1 className="text-white font-minecraft text-center text-base/[20px] lg:text-[25.6px]/[32px] tracking-[0.1em]">
             "BOSTONHACKS IS
             <br />
@@ -50,16 +50,17 @@ const SponsorPage = () => {
           </h2>
         </div>
       </div>
-      <PinkButton buttonText="WHO ARE WE?" extraStyling="mb-12 lg:mb-0" />
+      <PinkButton buttonText="WHO ARE WE?" extraStyling="mb-12 lg:mb-0 z-10" />
       <WhoWeAreScroll />
-      <PinkButton buttonText="WHY US?" extraStyling="mt-[105px] lg:mt-[200px]" />
+      <PinkButton buttonText="WHY US?" extraStyling="mt-[105px] lg:mt-[200px] z-10" doubleStarStyling={'lg:hidden'}/>
       <WhyUs />
-      <SectionTitle extraStyling={'mb-16 mt-14 lg:mt-0'} text={'SPONSOR'} ID="Sponsor"/>
+      <SectionTitle extraStyling={'mb-16 mt-14 lg:mt-0 z-10'} text={'SPONSOR'} ID="Sponsor"/>
       <Perks />
-      <SectionTitle extraStyling={'mb-16 lg:-mt-4'} text={'STATS'} ID="Stats" />
+      <SectionTitle extraStyling={'mb-16 lg:-mt-4 z-10'} text={'STATS'} ID="Stats" />
       <Stats />
-      <SectionTitle extraStyling={'mb-16 lg:mb-48'} text={'REVIEWS'} ID="Reviews" />
+      <SectionTitle extraStyling={'mb-16 lg:mb-48 z-10'} text={'REVIEWS'} ID="Reviews" showSparkle={true}/>
       <Reviews />
+      <SponsorButton />
       <Footer />
     </div>
   );

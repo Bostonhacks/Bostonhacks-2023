@@ -1,6 +1,6 @@
 const Reviews = () => {
     return (
-    <div className="mx-8 lg:mx-52">
+    <div className="mx-8 lg:mx-52 mb-80 lg:mb-[800px] z-10">
         <div className="mb-[71px] lg:mb-56 lg:pr-72">
           <h1 className="font-minecraft font-bold text-[13px] lg:text-[22px] mb-[18px] text-white">
             Twilio: Sam Agnew
@@ -30,7 +30,7 @@ const Reviews = () => {
             us.”
           </p>
         </div>
-        <div className="mb-[71px] lg:mb-56 lg:pr-72">
+        <div className="lg:pr-72">
           <h1 className="font-minecraft font-bold text-[13px] lg:text-[22px] mb-[18px] text-white">
             Cadence: Apurva Kalia
           </h1>

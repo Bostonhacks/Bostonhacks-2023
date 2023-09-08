@@ -17,10 +17,10 @@ export default {
         'text-primary': '#FFFFFF', //"#FFFFFF" add this when we don't have a white background
         'text-secondary': '#965340',
       },
-      // backgroundImage: {
-      //   sponsor_background:
-      //     "url('/src/assets/images/SponsorPage/Background.svg')",
-      // },
+      backgroundImage: {
+        sponsor_background:
+          "url('/src/assets/images/SponsorPage/Background.svg')",
+      },
       keyframes: {
         wiggle: {
           '0%': { transform: 'scale(1.0)' },
@@ -36,7 +36,7 @@ export default {
     },
     listStyleImage: {
       goldKey: 'url("/src/assets/images/SponsorPage/PerksAssets/GoldKey.svg")',
-    },
+    }
   },
   plugins: [],
 };

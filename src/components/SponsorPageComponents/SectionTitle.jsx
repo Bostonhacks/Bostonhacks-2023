@@ -1,6 +1,8 @@
 import { ReactComponent as SponsorFAQ } from '../../assets/images/TitleBG.svg';
+import ReviewSparkle from '../../assets/images/SponsorPage/ReviewSparkle.svg';
 
-const SectionTitle = ({ extraStyling, text, ID }) => {
+
+const SectionTitle = ({ extraStyling, text, ID, showSparkle }) => {
   return (
     <div
       className={`relative justify-center flex flex-col items-center ${extraStyling}`}
@@ -12,6 +14,7 @@ const SectionTitle = ({ extraStyling, text, ID }) => {
           {text}
         </h1>
       </div>
+      {showSparkle ? <img src={ReviewSparkle} className='absolute w-[14vw] lg:w-auto mr-[70vw] lg:mr-[30vw] ml-auto -bottom-4 lg:-bottom-12'/> : <div/> }
     </div>
   );
 };
