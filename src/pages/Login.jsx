@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../firebase/firebase-config";
 import { useAuthState } from "react-firebase-hooks/auth";
 import GoogleIcon from "../components/common/svg/GoogleIcon";
-
+import Footer from "../components/common/Footer";
 // Login page
 export default function Login() {
     const [user, loading] = useAuthState(auth);
@@ -25,7 +25,7 @@ export default function Login() {
           <span>Login with Google</span>
         </button>
   
-        {/* <Footer /> */}
+        <Footer/>
       </div>
     );
 }

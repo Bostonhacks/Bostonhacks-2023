@@ -9,6 +9,7 @@ import LandingPage from './pages/LandingPage';
 import SponsorPage from './pages/SponsorPage';
 import Application from './pages/Application';
 import Login from './pages/Login';
+import Dashboard from './pages/HackerDashboard';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="sponsor" element={<SponsorPage />} />
       <Route path="application" element={<Application />} />
       <Route path="login" element={<Login />} />
+      <Route path="dashboard" element={<Dashboard />} />
     </Route>
   )
 );

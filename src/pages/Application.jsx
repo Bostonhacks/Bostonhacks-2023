@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 import { auth, addApplicationDoc } from "../firebase/firebase-config";
@@ -157,6 +158,17 @@ const Application = () => {
       </form>
     </div>
   )
+=======
+import Footer from "../components/common/Footer";
+
+const Application = () => {
+  return (
+    <div className="">
+      Application
+      <Footer />
+    </div>
+  );
+>>>>>>> origin/main
 };
 
 export default Application;
