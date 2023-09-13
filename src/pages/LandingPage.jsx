@@ -35,6 +35,9 @@ const LandingPage = () => {
       <TrackModals />
       <FAQ />
       <Schedule />
+      <Feliz>
+        Thanks to all the sponsors for making this event possible!
+      </Feliz>
       <Sponsor />
       <Footer />
     </div>

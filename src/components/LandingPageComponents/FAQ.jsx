@@ -96,10 +96,10 @@ const FAQ = () => {
       </div>
     <section
       id="faq"
-      className="w-full flex flex-col items-center justify-center text-text-primary px-5 my-[10rem]"
+      className="w-full flex flex-col items-center justify-center text-text-primary px-5 my-[10rem] mt-80 max-sm:mt-0"
       >
       <div className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]">
-        <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1">
+        <h2 className="z-50 text-center relative md:text-5xl text-3xl pb-1">
           FAQ
         </h2>
         <img className="z-20 absolute" src={faq_title} alt="FAQ Button" />

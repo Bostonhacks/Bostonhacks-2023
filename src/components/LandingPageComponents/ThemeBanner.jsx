@@ -17,7 +17,7 @@ const Word = ({ children, image }) => {
 
 const ThemeBanner = () => {
   return (
-    <div className="flex justify-around flex-row items-center mx-3 my-[10rem] md:mx-[15%] font-misterpixel z-50">
+    <div className="flex justify-around flex-row items-center mx-3 my-[10rem] md:mx-[15%] font-misterpixel z-50 pt-60 max-sm:pt-0">
       <img
         alt="star"
         className="mb-[5rem] z-[100000] w-auto h-[30px] md:w-[95x] md:h-[95px]"
