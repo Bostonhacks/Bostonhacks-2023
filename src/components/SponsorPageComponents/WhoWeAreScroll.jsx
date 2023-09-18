@@ -3,7 +3,7 @@ import ScrollMobile from '../../assets/images/SponsorPage/WhoWeAreScrollMobile.s
 
 const WhoWeAreScroll = () => {
     return (
-    <div className=''>
+    <div className='lg:scale-100 md:scale-[80%]'>
         <div className='justify-center flex relative z-10'>
             <img
                 className="min-[320px]:hidden md:flex z-10"
@@ -15,7 +15,7 @@ const WhoWeAreScroll = () => {
             src={ScrollMobile}
             alt="WhoWeAreScrollMobile"
             />
-            <div className='absolute text-center font-minecraft text-[#965340] text-[10px] text-[#965340] w-[214px] mt-[115px] leading-3 md:w-[614px] md:h-[350px] md:text-xl/[24px] md:mt-[235px] md:mr-[114.8px] md:ml-[122px] md:mb-[187.32px] md:leading-[24px] z-10'>
+            <div className='absolute text-center font-minecraft text-[#965340] text-[10px] text-[#965340] w-[214px] mt-[115px] leading-3 md:w-[614px] md:h-[350px] md:text-xl/[24px] md:mt-[26vw] lg:mt-[235px] md:mr-[114.8px] md:ml-[122px] md:mb-[187.32px] md:leading-[24px] z-10'>
                 <p>BostonHacks brings together over 100 students for an exhilarating 36 hours to build awesome projects. In our past events, students had meaningful interactions with mentors, peers, and sponsors.<br />
                     <br />
                     A hackathon would be incomplete without new technology, advice, and ideas our sponsors offer, and we'd be eager to have you join us this coming fall!<br/>
