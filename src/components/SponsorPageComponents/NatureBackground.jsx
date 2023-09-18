@@ -13,13 +13,13 @@ const NatureBackground = () => {
         <div className='z-0 xl:w-auto w-full -mt-28 lg:-mt-[74px] relative'>
             <img
                 className="min-[320px]:hidden lg:flex w-full object-fill"
-                src={BackgroundWithText}
+                src={Background}
                 alt="NatureBackground"
                 onDragStart={(event)=> event.preventDefault()}
             />
             <img
                 className="lg:hidden object-fill w-full"
-                src={BackgroundWithTextMobile}
+                src={BackgroundMobile}
                 alt="NatureBackgroundMobile"
                 onDragStart={(event)=> event.preventDefault()}
             />
@@ -45,8 +45,8 @@ const NatureBackground = () => {
                 </div>
                 <SponsorButton />
             </div>
-            {/* <div className="absolute mt-44 lg:mt-60 items-center flex-col flex mb-80 lg:mb-[426px] z-10 lg:bottom-[12%] bottom-[10%] md:bottom-[23%] right-0 left-0">
-                    <h1 className="text-white font-minecraft text-center text-base/[20px] lg:text-[25.6px]/[32px] tracking-[0.1em]">
+            <div className="absolute mt-44 lg:mt-60 items-center flex-col flex mb-[75vw] lg:mb-[30vw] z-10 lg:bottom-[16vw] bottom-[42vw] md:bottom-[50vw] right-0 left-0">
+                    <h1 className="text-white font-minecraft text-center text-base/[20px] md:text-[25.6px]/[32px] tracking-[0.1em]">
                         "BOSTONHACKS IS
                         <br />
                         CONSISTENTLY ONE OF THE
@@ -56,10 +56,10 @@ const NatureBackground = () => {
                         <br />
                         YEAR AFTER YEAR."
                     </h1>
-                    <h2 className="text-white text-xs lg:text-[19.2px] text-center font-ft88 text-left mt-4">
+                    <h2 className="text-white text-xs md:text-[19.2px] text-center font-ft88 text-left mt-4">
                         SAM ANGNEW, TWILIO
                     </h2>
-            </div> */}
+            </div>
         </div>
         
       );
