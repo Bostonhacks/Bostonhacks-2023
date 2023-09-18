@@ -3,6 +3,7 @@ import CountDownTimer from './CountDownTimer';
 import facebook from './svg/facebook.png';
 import instagram from './svg/instagram.png';
 import twitter from './svg/twitter.png';
+// import cloudBG from '../../assets/images/LandingPage/Background/footerCloudBG.svg';
 const Footer = () => {
   return (
     <div className="mb-10 font-minecraft z-50">

@@ -6,6 +6,8 @@ import {
   collection,
   where,
   addDoc,
+  doc,
+  updateDoc
 } from 'firebase/firestore';
 import {
   GoogleAuthProvider,
@@ -58,3 +60,35 @@ export const signInWithGoogle = async () => {
 export const logout = () => {
   signOut(auth);
 };
+
+
+// Function to submit application.
+export const addApplicationDoc = async(formData, uid) => {
+  try {
+    // Query the currently logged in user.
+    const q = query(
+      collection(db, "applications"),
+      where("uid", "==", uid)
+    );
+    const docs = await getDocs(q);
+
+    if (docs.docs.length === 1) {
+      // If user exists, update application with form data.
+      // Also change status to "Started".
+      await updateDoc(docs.docs[0].ref, {
+        ...formData,
+        status: "Started"
+      });
+    }
+
+    else {
+      // Otherwise, user does not exist and should not be submitting the form.
+      // Throw an error.
+      throw new Error("User does not exist!");
+    }
+
+  } catch (err) {
+    throw err;
+  }
+
+}

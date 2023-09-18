@@ -12,7 +12,7 @@ const SponsorButton = () => {
   };
 
   return (
-    <div className="justify-center flex mt-[22px] lg:mt-[27.8px] z-50">
+    <div className="justify-center flex mt-auto z-50 max-sm:scale-75">
       <button className="z-50" onClick={handleClick}>
         <img
           src={image}

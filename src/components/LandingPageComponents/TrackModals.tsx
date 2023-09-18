@@ -14,7 +14,7 @@ const TrackModals = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div
-        className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px]"
+        className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px] mb-20 max-sm:mb-0 max-sm:mt-10"
         id="tracks"
       >
         <h2 className="z-50 text-center relative md:text-5xl text-4xl pb-1 text-text-primary">
