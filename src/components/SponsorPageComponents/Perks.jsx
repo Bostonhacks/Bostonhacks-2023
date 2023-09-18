@@ -50,8 +50,8 @@ const ChoosePerkButton = ({ link }) => {
 const Perks = () => {
   return (
     <div className='z-10'>
-        <div className="flex flex-col lg:flex-row lg:overflow-x-scroll lg:gap-[80px] lg:no-scrollbar">
-        <div className="items-center flex flex-col lg:ml-[80px]">
+        <div className="flex flex-col lg:flex-row lg:overflow-x-scroll lg:gap-[80px] lg:no-scrollbar z-10">
+        <div className="items-center flex flex-col lg:ml-[80px] z-10">
           <PerksTitle perkAmount={500} subHeading={'Sneak Peak'} />
 
           <div className="relative mt-[30px] mb-[16px]">
@@ -68,7 +68,7 @@ const Perks = () => {
           <div className='mb-20 lg:mb-0'/>
         </div>
 
-        <div className="items-center flex flex-col">
+        <div className="items-center flex flex-col z-10">
           <PerksTitle perkAmount={1500} subHeading={'Novice'} />
 
           <div className="relative mt-[30px] mb-[16px]">
@@ -91,7 +91,7 @@ const Perks = () => {
           <div className='mb-20 lg:mb-0'/>
         </div>
 
-        <div className="items-center flex flex-col">
+        <div className="items-center flex flex-col z-10">
           <PerksTitle perkAmount={3000} subHeading={'Skilled'} />
 
           <div className="relative mt-[30px] mb-[16px]">
@@ -125,7 +125,7 @@ const Perks = () => {
           <div className='mb-20 lg:mb-0'/>
         </div>
 
-        <div className="items-center flex flex-col lg:w-[333px]">
+        <div className="items-center flex flex-col lg:w-[333px z-10">
           <PerksTitle perkAmount={4500} subHeading={'Master'} />
 
           <div className="relative mt-[30px] mb-[16px]">
@@ -163,7 +163,7 @@ const Perks = () => {
           <div className='mb-20 lg:mb-0'/>
         </div>
 
-        <div className="items-center flex flex-col lg:w-[333px]">
+        <div className="items-center flex flex-col lg:w-[333px] z-10">
           <PerksTitle perkAmount={6000} subHeading={'Legendary'} />
 
           <div className="relative mt-[30px] mb-[16px]">
@@ -205,7 +205,7 @@ const Perks = () => {
         {/* <div className="m-0" /> */}
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center mx-8 lg:space-x-12 space-y-14 lg:space-y-0 lg:mx-72 mt-24">
+      <div className="flex flex-col lg:flex-row justify-center items-center mx-8 lg:space-x-12 space-y-14 lg:space-y-0 lg:mx-72 mt-24 z-10">
         <div className="flex flex-col justify-center mr-[30%] lg:mr-0">
           <h1 className="font-minecraft text-white text-xs lg:text-lg font-bold mb-2">
             *General Email:

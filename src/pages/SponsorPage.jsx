@@ -9,16 +9,23 @@ import SponsorNav from '../components/SponsorPageComponents/SponsorNav';
 import PinkButton from '../components/SponsorPageComponents/SponsorButtons/PinkButton';
 import WhyUs from '../components/SponsorPageComponents/WhyUs';
 import Reviews from '../components/SponsorPageComponents/Reviews';
+// import FooterCloudImage from '../assets/images/SponsorPage/FooterCloud.svg';
+import FooterCloudImage from '../assets/images/SponsorPage/FooterCloud.png';
+
+import Clouds from '../assets/images/SponsorPage/Clouds.svg';
+
 
 const SponsorPage = () => {
   return (
     <div
-      className="bg-auto bg-sponsor_background bg-no-repeat lg:bg-cover flex flex-col relative overflow-x-hidden"
-      // style={{
-      //   background:
-      //     'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
-      // }}
+      // className="bg-auto bg-sponsor_background bg-no-repeat lg:bg-cover flex flex-col relative overflow-x-hidden"
+      className='relative'
+      style={{
+        background:
+          'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
+      }}
     >
+      <img src={Clouds} className='absolute z-0 object-cover h-[3781px] 2xl:h-auto top-[4150px]' />
       <SponsorNav />
       <NatureBackground />
       <PinkButton buttonText="WHO ARE WE?" extraStyling="mb-12 lg:mb-0 z-10" />
@@ -31,6 +38,10 @@ const SponsorPage = () => {
       <Stats />
       <SectionTitle extraStyling={'mb-16 lg:mb-48 z-10'} text={'REVIEWS'} ID="Reviews" showSparkle={true}/>
       <Reviews />
+      {/* <div className='absolute bottom-36 z-10 w-[1440px] overflow-hidden'>
+        <img src={FooterCloudImage} className='object-center' />
+      </div> */}
+      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto' />
       <SponsorButton />
       <Footer />
     </div>

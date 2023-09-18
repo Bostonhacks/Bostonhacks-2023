@@ -5,7 +5,7 @@ import instagram from './svg/instagram.png';
 import twitter from './svg/twitter.png';
 const Footer = () => {
   return (
-    <div className="mb-10 font-minecraft">
+    <div className="mb-10 font-minecraft z-50">
       <CountDownTimer />
       <ul className="flex justify-center items-center space-x-5 scale-50 mb-10">
         <li>
@@ -33,8 +33,10 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className="text-center font-black">Made with love by BostonHacks</p>
-      <p className="text-center text-sm">Forest Pixel Art by Eder Muniz</p>
+      <div className='z-50 relative'>
+        <p className="text-center font-black">Made with love by BostonHacks</p>
+        <p className="text-center text-sm">Forest Pixel Art by Eder Muniz</p>
+      </div>
     </div>
   );
 };
