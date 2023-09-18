@@ -37,7 +37,7 @@ const CountDownTimer = () => {
 
   return (
     <div className="flex justify-center space-x-5 mt-10 mb-10">
-      <div className="">
+      <div className="z-50">
         <div className="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
           <div className="absolute inset-0 flex items-center justify-center">
@@ -51,7 +51,7 @@ const CountDownTimer = () => {
         </p>
       </div>
 
-      <div className="">
+      <div className="z-50">
         <div className="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
           <div className="absolute inset-0 flex items-center justify-center">
@@ -65,7 +65,7 @@ const CountDownTimer = () => {
         </p>
       </div>
 
-      <div className="">
+      <div className="z-50">
         <div className="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
           <div className="absolute inset-0 flex items-center justify-center">
@@ -79,7 +79,7 @@ const CountDownTimer = () => {
         </p>
       </div>
 
-      <div className="">
+      <div className="z-50">
         <div className="relative w-15 h-15 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
           <div className="absolute inset-0 flex items-center justify-center">
