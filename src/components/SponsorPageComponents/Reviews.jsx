@@ -1,8 +1,8 @@
 const Reviews = () => {
     return (
     <div className="mx-8 lg:mx-52 mb-80 lg:mb-[800px] z-10">
-        <div className="mb-[71px] lg:mb-56 lg:pr-72 z-10">
-          <h1 className="font-minecraft font-bold text-[13px] lg:text-[22px] mb-[18px] text-white z-10 relative">
+        <div className="mb-[71px] lg:mb-56 lg:pr-72 z-10 relative">
+          <h1 className="font-minecraft font-bold text-[13px] lg:text-[22px] mb-[18px] text-white">
             Twilio: Sam Agnew
           </h1>
           <p className="font-minecraft text-xs lg:text-2xl text-white">
