@@ -25,7 +25,7 @@ const SponsorPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
-      <img src={Clouds} className='absolute z-0 object-cover h-[3781px] 2xl:h-auto top-[4150px]' />
+      <img src={Clouds} className='absolute z-0 object-cover h-[3781px] 2xl:h-auto top-[4150px] 2xl:w-full' />
       <SponsorNav />
       <NatureBackground />
       <PinkButton buttonText="WHO ARE WE?" extraStyling="mb-12 lg:mb-0 z-10" />
@@ -41,7 +41,7 @@ const SponsorPage = () => {
       {/* <div className='absolute bottom-36 z-10 w-[1440px] overflow-hidden'>
         <img src={FooterCloudImage} className='object-center' />
       </div> */}
-      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto' />
+      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto 2xl:w-full' />
       <SponsorButton />
       <Footer />
     </div>
