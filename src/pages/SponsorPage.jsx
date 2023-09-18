@@ -25,7 +25,7 @@ const SponsorPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
-      <img src={Clouds} className='absolute z-0 object-cover h-[3781px] 2xl:h-auto top-[4150px] 2xl:w-full' />
+      <img src={Clouds} className='absolute z-0 object-cover h-[3781px] 2xl:h-auto top-[4150px] 2xl:w-full' onDragStart={(event)=> event.preventDefault()} />
       <SponsorNav />
       <NatureBackground />
       <PinkButton buttonText="WHO ARE WE?" extraStyling="mb-12 lg:mb-0 z-10" />
@@ -38,10 +38,7 @@ const SponsorPage = () => {
       <Stats />
       <SectionTitle extraStyling={'mb-16 lg:mb-48 z-10'} text={'REVIEWS'} ID="Reviews" showSparkle={true}/>
       <Reviews />
-      {/* <div className='absolute bottom-36 z-10 w-[1440px] overflow-hidden'>
-        <img src={FooterCloudImage} className='object-center' />
-      </div> */}
-      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto 2xl:w-full' />
+      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto 2xl:w-full' onDragStart={(event)=> event.preventDefault()}/>
       <SponsorButton />
       <Footer />
     </div>

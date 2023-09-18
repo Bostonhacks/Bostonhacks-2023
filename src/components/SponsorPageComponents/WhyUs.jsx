@@ -26,7 +26,7 @@ const whyUs = [
 
 const WhySection = ({ data }) => {
   return (
-    <div className="flex flex-col lg:space-y-8 lg:mx-20 lg:px-10 lg:py-20 font-minecraft">
+    <div className="flex flex-col lg:space-y-8 lg:mx-20 lg:px-10 lg:py-20 font-minecraft z-10">
       
       {data.map((item, index) => (
         <div
@@ -63,12 +63,12 @@ const WhyUs = () => {
 
       <WhySection data={whyUs[0]} reverse={true} />
 
-      <img src={FelizPlatformPNG} alt="FelizPlatformPNG" className="max-w-md mt-12 w-[127px] lg:w-auto lg:mt-0" />
-      <div className="lg:mb-20 items-center flex flex-col">
-        <h1 className="text-xs lg:text-2xl mb-3 lg:6">Questions?</h1>
-        <p className="text-xs lg:text-2xl">We welcome any questions or</p>
-        <p className="text-xs lg:text-2xl">special requests. Please email us at</p>
-        <h1 className="font-misterpixel font-normal pt-2 lg:py-10 text-sm lg:text-3xl">
+      <img src={FelizPlatformPNG} alt="FelizPlatformPNG" className="max-w-md mt-12 w-[127px] lg:w-auto lg:mt-0 z-10" />
+      <div className="lg:mb-20 items-center flex flex-col z-10">
+        <h1 className="text-xs lg:text-2xl mb-3 lg:6 z-10">Questions?</h1>
+        <p className="text-xs lg:text-2xl z-10">We welcome any questions or</p>
+        <p className="text-xs lg:text-2xl z-10">special requests. Please email us at</p>
+        <h1 className="font-misterpixel font-normal pt-2 lg:py-10 text-sm lg:text-3xl z-10">
           contact@bostonhacks.io
         </h1>
       </div>
