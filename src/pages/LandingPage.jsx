@@ -9,6 +9,7 @@ import NatureBG from '../components/LandingPageComponents/NatureBG';
 import TrackModals from '../components/LandingPageComponents/TrackModals';
 import Schedule from '../components/LandingPageComponents/Schedule';
 import Sponsor from '../components/LandingPageComponents/Sponsor';
+import ApplyButton from '../components/LandingPageComponents/ApplyButton';
 
 const LandingPage = () => {
   return (
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <NatureBG />
       <LandingNav />
       <Title />
+      <ApplyButton />
       <SponsorButton />
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you
@@ -35,9 +37,7 @@ const LandingPage = () => {
       <TrackModals />
       <FAQ />
       <Schedule />
-      <Feliz>
-        Thanks to all the sponsors for making this event possible!
-      </Feliz>
+      <Feliz>Thanks to all the sponsors for making this event possible!</Feliz>
       <Sponsor />
       <Footer />
     </div>
