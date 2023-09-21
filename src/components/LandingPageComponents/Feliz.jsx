@@ -10,9 +10,9 @@ const Feliz = ({ children }) => {
       </div>
 
       <div className="relative font-ft88">
-        <p className="z-50 text-text-primary leading-[1rem] text-xs md:text-2xl left-[35px] absolute">
+        {/* <p className="z-50 text-text-primary leading-[1rem] text-xs md:text-2xl left-[35px] absolute">
           FELIZ
-        </p>
+        </p> */}
         <p className="md:pl-2 text-text-secondary pb-2 pr-2 z-50 leading-[0.7rem] text-[10px] md:text-lg left-[2.3rem] top-[27%] break-normal absolute">
           {children}
         </p>
