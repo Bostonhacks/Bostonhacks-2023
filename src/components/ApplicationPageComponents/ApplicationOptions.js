@@ -33,11 +33,6 @@ const pronouns = [
     "He / Him / His",
     "She / Her / Hers",
     "They / Them / Theirs",
-    "Ze / Hir / Hirs",
-    "Xe / Xem / Xyrs",
-    "Ver / Vir / Vis",
-    "Te / Tem / Ter",
-    "E / Eim / Eirs",
     "Others"
 ]
 
