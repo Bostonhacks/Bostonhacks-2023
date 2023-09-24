@@ -34,7 +34,11 @@ const TrackModals = () => {
               setTrack1Open(true);
             }}
           >
-            <img src={track1} alt="track 1" />
+            <img src={track1} alt="track 1" className="mb-[1vw]" />
+            <label className="font-misterpixel text-2xl text-white">
+              <span className="border-y-2 md:border-y-4 md:py-1">DIGITAL</span>{' '}
+              <span className="border-y-2 md:border-y-4 md:py-1">DREAMERS</span>
+            </label>
           </button>
           <button
             className="mt-[10vh] md:mt-0 z-50"
@@ -42,7 +46,15 @@ const TrackModals = () => {
               setTrack2Open(true);
             }}
           >
-            <img src={track2} alt="track 2" />
+            <img src={track2} alt="track 2" className="mb-[1vw]" />
+            <label className="font-misterpixel text-2xl text-white">
+              <span className="border-y-2 md:border-y-4 md:py-1">
+                INCLUSIVE
+              </span>{' '}
+              <span className="border-y-2 md:border-y-4 md:py-1">
+                INNOVATION
+              </span>
+            </label>
           </button>
           <button
             className="mt-[10vh] md:mt-0 z-50"
@@ -51,6 +63,14 @@ const TrackModals = () => {
             }}
           >
             <img src={track3} alt="track 3" />
+            <label className="font-misterpixel text-2xl text-white">
+              <span className="border-y-2 md:border-y-4 md:py-1">
+                SUSTAINABLE
+              </span>{' '}
+              <span className="border-y-2 md:border-y-4 md:py-1">
+                SOLUTIONS
+              </span>
+            </label>
           </button>
         </div>
         <Modal
