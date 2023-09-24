@@ -3,6 +3,7 @@ import sponsorFaceBox from '../../assets/images/sponsorFaceBox.svg';
 import sponsorHeartGroup from '../../assets/images/sponsorHeartGroup.svg';
 import applyButton from '../../assets/images/applyButton.svg';
 import TitleBG from '../../assets/images/TitleBG.svg';
+import ApplyButton from './ApplyButton';
 
 export default function Sponsor() {
   const sponsors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 14];
@@ -17,7 +18,7 @@ export default function Sponsor() {
         </h2>
         <img className="z-20 absolute" src={TitleBG} alt="TitleBG" />
       </div>
-      <div className="grid grid-cols-3 lg:grid-cols-6 gap-14 lg:gap-20 mt-20 mx-[5vw]">
+      <div className="grid grid-cols-3 lg:grid-cols-6 gap-14 lg:gap-20 mt-20 mx-[5vw] mb-20">
         {sponsors.map((sponsor) => (
           <div key={sponsor}>
             <img src={sponsorFaceBox} alt="sponsor" />
@@ -25,9 +26,8 @@ export default function Sponsor() {
           </div>
         ))}
       </div>
-      <button>
-        <img src={applyButton} alt="" className="mt-20 scale-75" />
-      </button>
+
+      <ApplyButton />
     </div>
   );
 }

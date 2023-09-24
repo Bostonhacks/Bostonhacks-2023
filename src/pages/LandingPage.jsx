@@ -10,6 +10,7 @@ import TrackModals from '../components/LandingPageComponents/TrackModals';
 import Schedule from '../components/LandingPageComponents/Schedule';
 import Sponsor from '../components/LandingPageComponents/Sponsor';
 import ApplyButton from '../components/LandingPageComponents/ApplyButton';
+import MentorApply from '../components/LandingPageComponents/MentorApply';
 
 const LandingPage = () => {
   return (
@@ -20,6 +21,7 @@ const LandingPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
+      <MentorApply />
       <NatureBG />
       <LandingNav />
       <Title />
