@@ -125,16 +125,18 @@ const FAQ = () => {
           <div className="overflow-hidden"></div>
         </div>
         {/* <div className="mt-[5rem] w-full flex flex-1 flex-col justify-between md:flex-row"> */}
+
         <img
           src={faqLeftCloud}
           alt="clouds"
           className="absolute z-10 left-0 max-sm:hidden"
-        />
+          />
         <img
           src={faqRightCloud}
           alt="clouds"
           className="absolute z-10 right-0 max-sm:hidden"
-        />
+          />
+        
         <div className="mt-[5rem] w-full grid md:grid-cols-2 grid-cols-1 gap-x-[5rem] z-20 lg:gap-x-[10rem] md:px-[5rem]">
           <FAQColumn questionAnswers={faq[0]} />
           <FAQColumn questionAnswers={faq[1]} />

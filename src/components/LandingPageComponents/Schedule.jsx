@@ -9,7 +9,7 @@ import felixPlatform from '../../assets/images/LandingPage/felixPlatform.svg';
 import mobileSchedule from '../../assets/images/LandingPage/mobileSchedule.svg';
 export default function Schedule() {
   return (
-    <div className="flex justify-center items-center flex-col w-full -mb-80 max-sm:mb-auto">
+    <div className="flex justify-center items-center flex-col w-full -mb-80 max-sm:mb-auto overflow-clip">
       <img src={felixPlatform} className='mb-20 mt-20 max-sm:hidden'/>
       <div
         className="relative flex items-center justify-center md:h-[132px] md:w-[431px] h-[57px] w-[186px] mt-20 mb-20"
