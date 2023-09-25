@@ -11,6 +11,7 @@ import Select from 'react-select';
 
 // Import assets.
 import BackgroundScroll from '../assets/images/ApplicationPage/ScrollBackground.svg';
+import RegisterButton from '../assets/images/ApplicationPage/RegisterButton.svg';
 
 // Importing options for some of the questions.
 import {
@@ -183,14 +184,16 @@ const Application = ({ applicationId }) => {
     setProgrammingInputs(values);
   };
 
-  // TODO: Form validation, mobile view, Check for logged in
+  // TODO: Form validation, mobile view, Check for logged in, form submission
   // Redirect user to login page if they are not logged in.
 
+  /*
   useEffect(() => {
     if (loading) return;
 
     if (!user) navigate('/login');
   }, [user, loading, navigate]);
+  */
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -225,7 +228,7 @@ const Application = ({ applicationId }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="h-[65vh] w-[80vh] overflow-scroll">
+        <div className="h-[80vh] w-[90vh] overflow-auto">
           {/* Form Title */}
           <div className="text-center font-minecraft">
             <h2 className="text-[#453119] text-[60px] font-bold">
@@ -247,7 +250,7 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* General Information Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">First Name</label>
                   <input
@@ -360,8 +363,8 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* Address Information Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="col-span-2">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
+                <div className="md:col-span-2">
                   <label className="ml-1 font-bold">Address</label>
                   <input
                     placeholder="Address"
@@ -399,7 +402,7 @@ const Application = ({ applicationId }) => {
                 <div>
                   <label className="ml-1 font-bold">State</label>
                   <small className="ml-2">
-                    Select <i>"Outside US"</i> if not applicable
+                    Select <i>"Outside US"</i> if NA
                   </small>
                   <Controller
                     name="state"
@@ -436,7 +439,7 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* Education Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">College</label>
                   <input
@@ -503,7 +506,7 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* Experience Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">
                     How many hackathons have you been to before?
@@ -598,7 +601,7 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* Misc Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">Dietary Restrictions</label>
                   <input
@@ -608,29 +611,6 @@ const Application = ({ applicationId }) => {
                   />
                 </div>
 
-                <div>
-                  <label className="ml-1 font-bold">
-                    Do you need sleep accommodations?
-                  </label>
-                  <Controller
-                    name="sleep"
-                    control={control}
-                    render={({ field }) => (
-                      <Select
-                        styles={selectFieldStyles}
-                        options={sleepAccomodations.map(
-                          (educationLevelOption) => {
-                            return {
-                              label: educationLevelOption,
-                              value: educationLevelOption,
-                            };
-                          }
-                        )}
-                        {...field}
-                      />
-                    )}
-                  />
-                </div>
                 <div>
                   <label className="ml-1 font-bold">
                     What is your T-Shirt size?
@@ -652,6 +632,30 @@ const Application = ({ applicationId }) => {
                     )}
                   />
                 </div>
+
+                <div>
+                  <label className="ml-1 font-bold">
+                    Do you need sleep accommodations?
+                  </label>
+                  <Controller
+                    name="sleep"
+                    control={control}
+                    render={({ field }) => (
+                      <Select
+                        styles={selectFieldStyles}
+                        options={sleepAccomodations.map(
+                          (sleepOption) => {
+                            return {
+                              label: sleepOption,
+                              value: sleepOption,
+                            };
+                          }
+                        )}
+                        {...field}
+                      />
+                    )}
+                  />
+                </div>
               </div>
             </div>
 
@@ -664,7 +668,7 @@ const Application = ({ applicationId }) => {
               </h3>
 
               {/* Links Form Fields */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">Github URL</label>
                   <input
@@ -704,7 +708,8 @@ const Application = ({ applicationId }) => {
                 (Min 50 Max 400 Characters):
               </p>
               <textarea
-                className="w-full h-[200px] resize-none p-1 rounded-xl"
+                placeholder="Tell us more!"
+                className="w-full h-[200px] resize-none p-1 rounded-xl px-4 bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25"
                 {...register('bostonhacks', {
                   required: true,
                   maxLength: 400,
@@ -787,11 +792,12 @@ const Application = ({ applicationId }) => {
               </div>
             </div>
 
-            <div className="w-full flex justify-end">
+            <div className="w-full flex justify-center">
               <input
+                style={{ backgroundImage: "url(" + RegisterButton + ")"}}
                 type="submit"
-                className="bg-green-600 p-2 rounded-lg cursor-pointer hover:bg-slate-400"
-                value="Submit!"
+                className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
+                value=""
               />
             </div>
           </form>
