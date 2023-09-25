@@ -1,5 +1,4 @@
 import title from '../../assets/images/title.svg';
-import applyButton from '../../assets/images/applyButton.svg';
 
 const Title = () => {
   return (
