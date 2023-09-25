@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SponsorPage from './pages/SponsorPage';
-import Application from './pages/Application';
 import Login from './pages/Login';
 import Dashboard from './pages/HackerDashboard';
 import Portal from './pages/Portal';

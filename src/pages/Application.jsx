@@ -3,12 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from 'react-router-dom';
 
-import {
-  auth,
-  addApplicationDoc,
-  db,
-  storage,
-} from '../firebase/firebase-config';
+import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes } from 'firebase/storage';
