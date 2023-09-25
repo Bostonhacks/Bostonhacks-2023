@@ -13,7 +13,7 @@ const ApplyButton = () => {
 
   return (
     <div className="justify-center flex mt-auto z-50 max-sm:scale-75">
-      <button className="z-50" onClick={handleClick} disabled>
+      <button className="z-50" onClick={handleClick}>
         <img
           src={image}
           onMouseOver={() => setImage(HoverButtonState)}
