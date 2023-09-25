@@ -19,13 +19,15 @@ export default function Login() {
     <div className="flex justify-center items-center h-screen">
       <button
         onClick={signInWithGoogle}
-        className="font-bold flex items-center space-x-2 px-4 py-6 rounded-lg"
+        className="font-bold flex flex-col items-center space-x-2 px-4 py-6 rounded-lg"
       >
         <GoogleIcon />
-        <span>Login with Google</span>
+        <p className="text-[#453119] text-[60px] font-bold font-minecraft">
+          Click me to login with Google
+        </p>
       </button>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
