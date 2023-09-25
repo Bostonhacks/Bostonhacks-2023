@@ -376,7 +376,7 @@ const educationLevels = [
   'Prefer not to answer',
 ];
 
-const sleepAccomodations = ['yes', 'no', 'maybe'];
+const sleepAccomodations = ['Yes', 'No', 'Maybe'];
 
 const programmingList = [
   'A# .NET',
