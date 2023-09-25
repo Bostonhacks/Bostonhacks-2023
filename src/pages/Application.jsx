@@ -115,7 +115,7 @@ const Application = ({ applicationId }) => {
       lastName: data.lastName,
       formEmail: data.formEmail,
       phoneNumber: data.phoneNumber,
-      dateOfBirth: data.dateOfBirth,
+      age: data.age,
       address: data.address,
       city: data.city,
       zipCode: data.zipCode,
@@ -301,12 +301,12 @@ const Application = ({ applicationId }) => {
                 </div>
 
                 <div>
-                  <label className="ml-1 font-bold">Date of Birth</label>
+                  <label className="ml-1 font-bold">Age</label>
                   <input
-                    type="date"
-                    placeholder="Date of Birth"
+                    type="number"
+                    placeholder="Age"
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('dateOfBirth', { required: true })}
+                    {...register('age', { required: true })}
                   />
                 </div>
 
