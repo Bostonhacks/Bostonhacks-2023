@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -104,6 +105,7 @@ const Application = ({ applicationId }) => {
   const [resume, setResume] = useState(null);
   const navigate = useNavigate();
   const { register, handleSubmit, control } = useForm();
+  const smallScreen = useMediaQuery({ maxWidth: 850 });
 
   // Function runs on application form submission.
   const onSubmit = async (data) => {
@@ -216,7 +218,9 @@ const Application = ({ applicationId }) => {
     };
   }, []);
 
-  return (
+  return smallScreen ? (
+    <div>Mobile site coming soon, please apply on desktop for now!</div>
+  ) : (
     <div
       style={{
         background:
