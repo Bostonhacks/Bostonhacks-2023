@@ -8,7 +8,7 @@ const ApplyButton = () => {
   const [image, setImage] = useState(InitialButtonState);
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/application');
+    navigate('/portal');
   };
 
   return (
