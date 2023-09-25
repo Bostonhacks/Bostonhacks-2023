@@ -1114,7 +1114,7 @@ const programmingList = [
   'ZPL',
 ];
 
-const shirtSizes = ['XS', 'S', 'M', 'L', 'XL'];
+const shirtSizes = ['S', 'M', 'L', 'XL'];
 
 export {
   ethnicities,
