@@ -147,7 +147,7 @@ const Application = ({ applicationId }) => {
     });
 
     if (resume != null) {
-      const resumeRef = ref(storage, `resumes/${applicationId}`);
+      const resumeRef = ref(storage, `${applicationId}`);
       uploadBytes(resumeRef, resume).then(() => {
         navigate('/login');
       });
