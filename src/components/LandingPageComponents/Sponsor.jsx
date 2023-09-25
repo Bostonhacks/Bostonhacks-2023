@@ -27,7 +27,7 @@ export default function Sponsor() {
         ))}
       </div>
 
-      <ApplyButton />
+      {/* <ApplyButton /> */}
     </div>
   );
 }

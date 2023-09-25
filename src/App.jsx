@@ -16,7 +16,7 @@ const router = createBrowserRouter(
     <Route path="/">
       <Route index element={<LandingPage />} />
       <Route path="sponsor" element={<SponsorPage />} />
-      <Route path="portal" element={<Portal />} />
+      {/* <Route path="portal" element={<Portal />} /> */}
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Dashboard />} />
     </Route>
