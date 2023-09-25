@@ -38,7 +38,6 @@ const SponsorPage = () => {
       <Stats />
       <SectionTitle extraStyling={'mb-16 lg:mb-48 z-10'} text={'REVIEWS'} ID="Reviews" showSparkle={true}/>
       <Reviews />
-      <img src={FooterCloudImage} className='absolute bottom-36 z-0 object-cover h-[480px] lg:h-[865px] 2xl:h-auto 2xl:w-full' onDragStart={(event)=> event.preventDefault()}/>
       <SponsorButton />
       <Footer />
     </div>
