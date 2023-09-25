@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from 'react-router-dom';
 
-import { auth, addApplicationDoc, db } from '../firebase/firebase-config';
+import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
+import { ref, uploadBytes } from 'firebase/storage';
 
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
@@ -96,12 +98,13 @@ const Application = ({ applicationId }) => {
     { language: '', experienceLevel: '' },
   ]);
   const [user, loading] = useAuthState(auth);
+  const [resume, setResume] = useState(null);
   const navigate = useNavigate();
   const { register, handleSubmit, control } = useForm();
+  const smallScreen = useMediaQuery({ maxWidth: 850 });
 
   // Function runs on application form submission.
   const onSubmit = async (data) => {
-    console.log('inside submit');
     // Allow null college major
     if (!data.collegeMajor) {
       data.collegeMajor = 'N/A';
@@ -113,7 +116,7 @@ const Application = ({ applicationId }) => {
       lastName: data.lastName,
       formEmail: data.formEmail,
       phoneNumber: data.phoneNumber,
-      dateOfBirth: data.dateOfBirth,
+      age: data.age,
       address: data.address,
       city: data.city,
       zipCode: data.zipCode,
@@ -140,7 +143,16 @@ const Application = ({ applicationId }) => {
       languageExperience: programmingInputs,
       status: 'Submitted',
     });
-    navigate('/login');
+
+    if (resume != null) {
+      const resumeRef = ref(storage, `${applicationId}`);
+      uploadBytes(resumeRef, resume).then(() => {
+        navigate('/login');
+      });
+    } else {
+      alert('please upload a resume');
+      return;
+    }
   };
 
   const onError = async (data, e) => {
@@ -191,6 +203,7 @@ const Application = ({ applicationId }) => {
   useEffect(() => {
     if (loading) return;
 
+    console.log(user);
     if (!user) navigate('/login');
   }, [user, loading, navigate]);
   */
@@ -203,7 +216,9 @@ const Application = ({ applicationId }) => {
     };
   }, []);
 
-  return (
+  return smallScreen ? (
+    <div>Mobile site coming soon, please apply on desktop for now!</div>
+  ) : (
     <div
       style={{
         background:
@@ -289,12 +304,12 @@ const Application = ({ applicationId }) => {
                 </div>
 
                 <div>
-                  <label className="ml-1 font-bold">Date of Birth</label>
+                  <label className="ml-1 font-bold">Age</label>
                   <input
-                    type="date"
-                    placeholder="Date of Birth"
+                    type="number"
+                    placeholder="Age"
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('dateOfBirth', { required: true })}
+                    {...register('age', { required: true })}
                   />
                 </div>
 
@@ -792,7 +807,25 @@ const Application = ({ applicationId }) => {
               </div>
             </div>
 
-            <div className="w-full flex justify-center">
+
+
+
+            <hr className="border border-black w-3/4 mx-auto" />
+
+            <div className="my-[50px]">
+              <p className="font-minecraft text-[#453119] text-[30px] font-bold mb-10">
+                Resume Upload
+              </p>
+              <input
+                type="file"
+                placeholder="Please upload a copy of your resume:"
+                accept=".pdf, .docx"
+                onChange={(e) => {
+                  setResume(e.target.files[0]);
+                }}
+              />
+            </div>
+            <div className="w-full flex justify-end">
               <input
                 style={{ backgroundImage: "url(" + RegisterButton + ")"}}
                 type="submit"

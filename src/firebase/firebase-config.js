@@ -16,6 +16,8 @@ import {
   signOut,
 } from 'firebase/auth';
 
+import { getStorage } from 'firebase/storage';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBhN3fCW3J8o_eRzUiUZrARHtN2VBQKyC4',
   authDomain: 'bhacks-2023.firebaseapp.com',
@@ -83,3 +85,5 @@ export const addApplicationDoc = async (formData, uid) => {
     throw err;
   }
 };
+
+export const storage = getStorage(app);

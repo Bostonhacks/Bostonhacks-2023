@@ -18,7 +18,7 @@ export default function Sponsor() {
         </h2>
         <img className="z-20 absolute" src={TitleBG} alt="TitleBG" />
       </div>
-      <div className="grid grid-cols-3 lg:grid-cols-6 gap-14 lg:gap-20 mt-20 mx-[5vw] mb-20">
+      <div className="grid z-10 grid-cols-3 lg:grid-cols-6 gap-14 lg:gap-20 mt-20 mx-[5vw] mb-20">
         {sponsors.map((sponsor) => (
           <div key={sponsor}>
             <img src={sponsorFaceBox} alt="sponsor" />
@@ -27,7 +27,7 @@ export default function Sponsor() {
         ))}
       </div>
 
-      <ApplyButton />
+      {/* <ApplyButton /> */}
     </div>
   );
 }
