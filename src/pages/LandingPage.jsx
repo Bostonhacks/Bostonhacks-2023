@@ -25,7 +25,7 @@ const LandingPage = () => {
       <NatureBG />
       <LandingNav />
       <Title />
-      {/* <ApplyButton /> */}
+      <ApplyButton />
       <SponsorButton />
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you
