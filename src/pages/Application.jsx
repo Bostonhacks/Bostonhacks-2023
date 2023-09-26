@@ -151,14 +151,8 @@ const Application = ({ applicationId }) => {
       const resumeRef = ref(storage, `${applicationId}`);
 
       uploadBytes(resumeRef, resume).then(() => {
-        getDownloadURL(resumeRef).then((url) => {
-          updateDoc(userDoc, {
-            resumeURL: url,
-          }).then(() => {
-            alert('Application Submitted');
-            navigate('/');
-          });
-        });
+        alert('Application Submitted');
+        navigate('/');
       });
     } else {
       alert('please upload a resume');
