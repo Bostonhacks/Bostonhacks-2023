@@ -411,9 +411,9 @@ const Application = ({ applicationId }) => {
                           return { label: stateOption, value: stateOption };
                         })}
                         {...field}
-                        {...register('state', { required: true })}
                       />
                     )}
+                    rules={{ required: true }}
                   />
                   {errors.state?.type === 'required' && (
                     <span className="text-red-500">Required</span>
@@ -542,8 +542,8 @@ const Application = ({ applicationId }) => {
                     render={({ field }) => (
                       <Select
                         styles={selectFieldStyles}
-                        options={diet.map((stateOption) => {
-                          return { label: stateOption, value: stateOption };
+                        options={diet.map((dietOption) => {
+                          return { label: dietOption, value: dietOption };
                         })}
                         {...field}
                       />
