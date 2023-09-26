@@ -154,11 +154,15 @@ const Application = ({ applicationId }) => {
         getDownloadURL(resumeRef).then((url) => {
           updateDoc(userDoc, {
             resumeURL: url,
-          }).then(navigate('/login'));
+          }).then(() => {
+            alert('Application Submitted');
+            navigate('/');
+          });
         });
       });
     } else {
       alert('please upload a resume');
+
       return;
     }
   };
