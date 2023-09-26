@@ -128,7 +128,7 @@ const Application = ({ applicationId }) => {
         zipCode: data.zipCode,
         school: data.school,
         collegeYear: data.collegeYear,
-        diet: data.diet && data.value['value'],
+        diet: data.diet['value'],
         github: data.github,
         linkedin: data.linkedin,
         portfolio: data.portfolio,
