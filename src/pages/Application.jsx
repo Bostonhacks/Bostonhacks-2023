@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
@@ -145,8 +145,12 @@ const Application = ({ applicationId }) => {
 
     if (resume != null) {
       const resumeRef = ref(storage, `${applicationId}`);
+      const resumeURL = await getDownloadURL(resumeRef);
+      console.log(resumeURL);
       uploadBytes(resumeRef, resume).then(() => {
-        navigate('/login');
+        updateDoc(userDoc, {
+          resumeURL: resumeURL,
+        }).then(navigate('/login'));
       });
     } else {
       alert('please upload a resume');
