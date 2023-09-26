@@ -19,7 +19,6 @@ const router = createBrowserRouter(
       {/* <Route path="portal" element={<Portal />} /> */}
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Dashboard />} />
-      <Route path="application" element={<Application />}/>
     </Route>
   )
 );
