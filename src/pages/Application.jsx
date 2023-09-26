@@ -140,7 +140,7 @@ const Application = ({ applicationId }) => {
         gender: data.gender['value'],
         pronouns: data.pronouns['value'],
         country: data.country['value'],
-        state: data.state['value'],
+        state: data.state ? data.state['value'] : null,
         major: data.major['value'],
         educationLevel: data.educationLevel['value'],
         sleep: data.sleep['value'],
