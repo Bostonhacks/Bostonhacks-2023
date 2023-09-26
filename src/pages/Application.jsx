@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
@@ -146,8 +146,12 @@ const Application = ({ applicationId }) => {
 
     if (resume != null) {
       const resumeRef = ref(storage, `${applicationId}`);
+      const resumeURL = await getDownloadURL(resumeRef);
+      console.log(resumeURL);
       uploadBytes(resumeRef, resume).then(() => {
-        navigate('/login');
+        updateDoc(userDoc, {
+          resumeURL: resumeURL,
+        }).then(navigate('/login'));
       });
     } else {
       alert('please upload a resume');
@@ -658,14 +662,12 @@ const Application = ({ applicationId }) => {
                     render={({ field }) => (
                       <Select
                         styles={selectFieldStyles}
-                        options={sleepAccomodations.map(
-                          (sleepOption) => {
-                            return {
-                              label: sleepOption,
-                              value: sleepOption,
-                            };
-                          }
-                        )}
+                        options={sleepAccomodations.map((sleepOption) => {
+                          return {
+                            label: sleepOption,
+                            value: sleepOption,
+                          };
+                        })}
                         {...field}
                       />
                     )}
@@ -807,9 +809,6 @@ const Application = ({ applicationId }) => {
               </div>
             </div>
 
-
-
-
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
@@ -827,7 +826,7 @@ const Application = ({ applicationId }) => {
             </div>
             <div className="w-full flex justify-end">
               <input
-                style={{ backgroundImage: "url(" + RegisterButton + ")"}}
+                style={{ backgroundImage: 'url(' + RegisterButton + ')' }}
                 type="submit"
                 className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
                 value=""
