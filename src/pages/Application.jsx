@@ -140,7 +140,7 @@ const Application = ({ applicationId }) => {
         gender: data.gender['value'],
         pronouns: data.pronouns['value'],
         country: data.country['value'],
-        state: data.state ? data.state['value'] : null,
+        state: data.state['value'],
         major: data.major['value'],
         educationLevel: data.educationLevel['value'],
         sleep: data.sleep['value'],
@@ -411,9 +411,13 @@ const Application = ({ applicationId }) => {
                           return { label: stateOption, value: stateOption };
                         })}
                         {...field}
+                        {...register('state', { required: true })}
                       />
                     )}
                   />
+                  {errors.state?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
