@@ -101,7 +101,12 @@ const Application = ({ applicationId }) => {
   const [user, loading] = useAuthState(auth);
   const [resume, setResume] = useState(null);
   const navigate = useNavigate();
-  const { register, handleSubmit, control } = useForm();
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
   const smallScreen = useMediaQuery({ maxWidth: 850 });
 
   // Function runs on application form submission.
@@ -111,46 +116,46 @@ const Application = ({ applicationId }) => {
       data.collegeMajor = 'N/A';
     }
 
-    const userDoc = doc(db, 'applications', applicationId);
-    await updateDoc(userDoc, {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      phoneNumber: data.phoneNumber,
-      age: data.age,
-      address: data.address,
-      city: data.city,
-      zipCode: data.zipCode,
-      school: data.school,
-      collegeYear: data.collegeYear,
-      diet: data.diet['value'],
-      github: data.github,
-      linkedin: data.linkedin,
-      portfolio: data.portfolio,
-      bostonhacks: data.bostonhacks,
-      acceptTerms: data.acceptTerms,
-      acceptTerms2: data.acceptTerms2,
-      acceptTerms3: data.acceptTerms3,
-      ethnicity: data.ethnicity['value'],
-      gender: data.gender['value'],
-      pronouns: data.pronouns['value'],
-      country: data.country['value'],
-      state: data.state['value'],
-      major: data.major['value'],
-      educationLevel: data.educationLevel['value'],
-      sleep: data.sleep['value'],
-      shirtSize: data.shirtSize['value'],
-      otherDiet: data.otherDiet,
-      status: 'Submitted',
-    });
-
     if (resume != null) {
+      const userDoc = doc(db, 'applications', applicationId);
+      await updateDoc(userDoc, {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phoneNumber: data.phoneNumber,
+        age: data.age,
+        address: data.address,
+        city: data.city,
+        zipCode: data.zipCode,
+        school: data.school,
+        collegeYear: data.collegeYear,
+        diet: data.diet && data.value['value'],
+        github: data.github,
+        linkedin: data.linkedin,
+        portfolio: data.portfolio,
+        bostonhacks: data.bostonhacks,
+        acceptTerms: data.acceptTerms,
+        acceptTerms2: data.acceptTerms2,
+        acceptTerms3: data.acceptTerms3,
+        ethnicity: data.ethnicity['value'],
+        gender: data.gender['value'],
+        pronouns: data.pronouns['value'],
+        country: data.country['value'],
+        state: data.state['value'],
+        major: data.major['value'],
+        educationLevel: data.educationLevel['value'],
+        sleep: data.sleep['value'],
+        shirtSize: data.shirtSize['value'],
+        otherDiet: data.otherDiet,
+        status: 'Submitted',
+      });
       const resumeRef = ref(storage, `${applicationId}`);
-      const resumeURL = await getDownloadURL(resumeRef);
-      console.log(resumeURL);
+
       uploadBytes(resumeRef, resume).then(() => {
-        updateDoc(userDoc, {
-          resumeURL: resumeURL,
-        }).then(navigate('/login'));
+        getDownloadURL(resumeRef).then((url) => {
+          updateDoc(userDoc, {
+            resumeURL: url,
+          }).then(navigate('/login'));
+        });
       });
     } else {
       alert('please upload a resume');
@@ -159,8 +164,7 @@ const Application = ({ applicationId }) => {
   };
 
   const onError = async (data, e) => {
-    // console.log(data);
-    console.log(e);
+    console.log(data);
   };
 
   useEffect(() => {
@@ -228,6 +232,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('firstName', { required: true })}
                   />
+                  {errors.firstName?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -237,15 +244,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('lastName', { required: true })}
                   />
-                </div>
-
-                <div>
-                  <label className="ml-1 font-bold">Email</label>
-                  <input
-                    placeholder="Email"
-                    className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('formEmail', { required: true })}
-                  />
+                  {errors.lastName?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -256,6 +257,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('phoneNumber', { required: true })}
                   />
+                  {errors.phoneNumber?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -266,6 +270,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('age', { required: true })}
                   />
+                  {errors.age?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -285,7 +292,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.ethnicity?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -302,7 +313,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.gender?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -319,7 +334,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.pronouns?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -341,6 +360,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('address', { required: true })}
                   />
+                  {errors.address?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -357,7 +379,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.country?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -367,6 +393,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('city', { required: true })}
                   />
+                  {errors.city?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -396,6 +425,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('zipCode', { required: true })}
                   />
+                  {errors.zipCode?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -418,13 +450,17 @@ const Application = ({ applicationId }) => {
                     render={({ field }) => (
                       <Select
                         styles={selectFieldStyles}
-                        options={schools.map((majorOption) => {
-                          return { label: majorOption, value: majorOption };
+                        options={schools.map((schoolOption) => {
+                          return { label: schoolOption, value: schoolOption };
                         })}
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.school?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -434,6 +470,9 @@ const Application = ({ applicationId }) => {
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
                     {...register('collegeYear', { required: true })}
                   />
+                  {errors.collegeYear?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -450,7 +489,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.major?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -470,7 +513,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.educationLevel?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -499,7 +546,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.diet?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -532,7 +583,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.shirtSize?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
 
                 <div>
@@ -554,7 +609,11 @@ const Application = ({ applicationId }) => {
                         {...field}
                       />
                     )}
+                    rules={{ required: true }}
                   />
+                  {errors.sleep?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -616,6 +675,15 @@ const Application = ({ applicationId }) => {
                   minLength: 50,
                 })}
               />
+              {errors.bostonhacks?.type === 'required' && (
+                <span className="text-red-500 ml-4">Required</span>
+              )}
+              {errors.bostonhacks?.type === 'minLength' && (
+                <span className="text-red-500 ml-4">Tell us more!</span>
+              )}
+              {errors.bostonhacks?.type === 'maxLength' && (
+                <span className="text-red-500 ml-4">Too many characters!</span>
+              )}
             </div>
 
             <hr className="border border-black w-3/4 mx-auto" />
@@ -642,6 +710,9 @@ const Application = ({ applicationId }) => {
                   </a>
                   ?
                 </p>
+                {errors.acceptTerms?.type === 'required' && (
+                  <span className="text-red-500 ml-4">Required</span>
+                )}
               </div>
 
               <div className="mb-5">
@@ -672,6 +743,9 @@ const Application = ({ applicationId }) => {
                       MLH Privacy Policy.
                     </a>{' '}
                   </p>
+                  {errors.acceptTerms2?.type === 'required' && (
+                    <span className="text-red-500">Required</span>
+                  )}
                 </div>
               </div>
 
