@@ -11,7 +11,7 @@ const faq = [
     {
       question: 'What is BostonHacks',
       answer:
-        'BostonHacks is a 24-hour event where studnets from different backgrounds gather together to use technology to create cool projects. Come to BostonHacks to expand your knowledge and skills, make new friends, win prizes and network with recruiters from our corporate sponsors!',
+        'BostonHacks is a 24-hour event where students from different backgrounds gather together to use technology to create cool projects. Come to BostonHacks to expand your knowledge and skills, make new friends, win prizes and network with recruiters from our corporate sponsors!',
     },
     {
       question: 'When and where is BostonHacks?',
@@ -21,7 +21,7 @@ const faq = [
     {
       question: 'Who can attend?',
       answer:
-        'All students including undergraduate, graduate and high school students with any background, all across the world are welcome!',
+        'All college students including undergraduate and graduate students with any background, all across the world are welcome!',
     },
     {
       question: 'Are there any rules?',
@@ -130,13 +130,13 @@ const FAQ = () => {
           src={faqLeftCloud}
           alt="clouds"
           className="absolute z-10 left-0 max-sm:hidden"
-          />
+        />
         <img
           src={faqRightCloud}
           alt="clouds"
           className="absolute z-10 right-0 max-sm:hidden"
-          />
-        
+        />
+
         <div className="mt-[5rem] w-full grid md:grid-cols-2 grid-cols-1 gap-x-[5rem] z-20 lg:gap-x-[10rem] md:px-[5rem]">
           <FAQColumn questionAnswers={faq[0]} />
           <FAQColumn questionAnswers={faq[1]} />
