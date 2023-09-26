@@ -25,9 +25,10 @@ import {
   majors,
   educationLevels,
   sleepAccomodations,
-  programmingList,
   shirtSizes,
+  diet,
 } from '../components/ApplicationPageComponents/ApplicationOptions';
+import { schools } from '../components/ApplicationPageComponents/ApplicationSchools';
 
 const Application = ({ applicationId }) => {
   // Custom Select Field styles.
@@ -114,16 +115,14 @@ const Application = ({ applicationId }) => {
     await updateDoc(userDoc, {
       firstName: data.firstName,
       lastName: data.lastName,
-      formEmail: data.formEmail,
       phoneNumber: data.phoneNumber,
       age: data.age,
       address: data.address,
       city: data.city,
       zipCode: data.zipCode,
-      college: data.college,
+      school: data.school,
       collegeYear: data.collegeYear,
-      hackathonsAttened: data.hackathonsAttened,
-      diet: data.diet,
+      diet: data.diet['value'],
       github: data.github,
       linkedin: data.linkedin,
       portfolio: data.portfolio,
@@ -140,7 +139,7 @@ const Application = ({ applicationId }) => {
       educationLevel: data.educationLevel['value'],
       sleep: data.sleep['value'],
       shirtSize: data.shirtSize['value'],
-      languageExperience: programmingInputs,
+      otherDiet: data.otherDiet,
       status: 'Submitted',
     });
 
@@ -159,54 +158,6 @@ const Application = ({ applicationId }) => {
     // console.log(data);
     console.log(e);
   };
-
-  const handleChangeLanguage = (index, event) => {
-    const values = [...programmingInputs];
-    values[index].language = event.value;
-    values[index].experienceLevel =
-      values[index].experienceLevel === ''
-        ? 'Novice'
-        : values[index].experienceLevel;
-    setProgrammingInputs(values);
-  };
-
-  const handleChangeExperience = (index, event) => {
-    const values = [...programmingInputs];
-    values[index].experienceLevel = event.target.value;
-    setProgrammingInputs(values);
-  };
-
-  const handleAddInput = (e) => {
-    e.preventDefault();
-    const values = [...programmingInputs];
-    if (values.length === 5) {
-      return values;
-    } else {
-      setProgrammingInputs([
-        ...programmingInputs,
-        { language: '', experienceLevel: '' },
-      ]);
-    }
-  };
-
-  const handleRemoveInput = (e, index) => {
-    e.preventDefault();
-    const values = [...programmingInputs];
-    values.splice(index, 1);
-    setProgrammingInputs(values);
-  };
-
-  // TODO: Form validation, mobile view, Check for logged in, form submission
-  // Redirect user to login page if they are not logged in.
-
-  /*
-  useEffect(() => {
-    if (loading) return;
-
-    console.log(user);
-    if (!user) navigate('/login');
-  }, [user, loading, navigate]);
-  */
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -456,11 +407,19 @@ const Application = ({ applicationId }) => {
               {/* Education Form Fields */}
               <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
-                  <label className="ml-1 font-bold">College</label>
-                  <input
-                    placeholder="College"
-                    className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('college', { required: true })}
+                  <label className="ml-1 font-bold">School</label>
+                  <Controller
+                    name="school"
+                    control={control}
+                    render={({ field }) => (
+                      <Select
+                        styles={selectFieldStyles}
+                        options={schools.map((majorOption) => {
+                          return { label: majorOption, value: majorOption };
+                        })}
+                        {...field}
+                      />
+                    )}
                   />
                 </div>
 
@@ -514,101 +473,6 @@ const Application = ({ applicationId }) => {
 
             <hr className="border border-black w-3/4 mx-auto" />
 
-            {/* Experience Section */}
-            <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
-                Experience
-              </h3>
-
-              {/* Experience Form Fields */}
-              <div className="md:grid md:grid-cols-2 md:gap-4">
-                <div>
-                  <label className="ml-1 font-bold">
-                    How many hackathons have you been to before?
-                  </label>
-                  <input
-                    placeholder="# Attended"
-                    min={0}
-                    type="number"
-                    className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('hackathonsAttened', { required: true })}
-                  />
-                </div>
-
-                <div>
-                  <label className="ml-1 font-bold">
-                    Select the programming languages/technology you have
-                    experience with:
-                  </label>
-                  <div>
-                    {programmingInputs.map((programmingInput, index) => (
-                      <div
-                        key={index}
-                        className="languageExp"
-                        name="programmingExperience"
-                      >
-                        <Controller
-                          name="languageExperience"
-                          control={control}
-                          render={({ field }) => (
-                            <div className="languageSelect">
-                              <Select
-                                styles={selectFieldStyles}
-                                options={programmingList.map((languageName) => {
-                                  return {
-                                    label: languageName,
-                                    value: languageName,
-                                  };
-                                })}
-                                onChange={(event) =>
-                                  handleChangeLanguage(index, event)
-                                }
-                              />
-                            </div>
-                          )}
-                        />
-                        <select
-                          onChange={(event) =>
-                            handleChangeExperience(index, event)
-                          }
-                        >
-                          <option value="Novice">Novice</option>
-                          <option value="Intermediate">Intermediate</option>
-                          <option value="Expert">Expert</option>
-                        </select>
-                      </div>
-                    ))}
-                    <div className="w-full flex flex-row justify-between mt-3">
-                      <button
-                        className={`p-1 ${
-                          programmingInputs.length >= 5
-                            ? 'bg-gray-300'
-                            : 'bg-gray-500'
-                        } w-1/4 rounded-xl `}
-                        onClick={handleAddInput}
-                        disabled={programmingInputs.length >= 5 ? true : false}
-                      >
-                        +
-                      </button>
-                      <button
-                        className={`p-1 ${
-                          programmingInputs.length <= 1
-                            ? 'bg-gray-300'
-                            : 'bg-gray-500'
-                        } w-1/4 rounded-xl `}
-                        onClick={handleRemoveInput}
-                        disabled={programmingInputs.length <= 1 ? true : false}
-                      >
-                        -
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <hr className="border border-black w-3/4 mx-auto" />
-
             {/* Misc Section */}
             <div className="my-[50px]">
               <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
@@ -619,10 +483,29 @@ const Application = ({ applicationId }) => {
               <div className="md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label className="ml-1 font-bold">Dietary Restrictions</label>
+                  <Controller
+                    name="diet"
+                    control={control}
+                    render={({ field }) => (
+                      <Select
+                        styles={selectFieldStyles}
+                        options={diet.map((stateOption) => {
+                          return { label: stateOption, value: stateOption };
+                        })}
+                        {...field}
+                      />
+                    )}
+                  />
+                </div>
+
+                <div>
+                  <label className="ml-1 font-bold">
+                    If other, please specify:
+                  </label>
                   <input
-                    placeholder="Dietary Restrictions"
+                    placeholder=""
                     className="h-10 px-4 w-full bg-[#A79581] placeholder-white text-white shadow-inner shadow-black/25 rounded-xl"
-                    {...register('diet', { required: true })}
+                    {...register('otherDiet')}
                   />
                 </div>
 
@@ -658,14 +541,12 @@ const Application = ({ applicationId }) => {
                     render={({ field }) => (
                       <Select
                         styles={selectFieldStyles}
-                        options={sleepAccomodations.map(
-                          (sleepOption) => {
-                            return {
-                              label: sleepOption,
-                              value: sleepOption,
-                            };
-                          }
-                        )}
+                        options={sleepAccomodations.map((sleepOption) => {
+                          return {
+                            label: sleepOption,
+                            value: sleepOption,
+                          };
+                        })}
                         {...field}
                       />
                     )}
@@ -807,9 +688,6 @@ const Application = ({ applicationId }) => {
               </div>
             </div>
 
-
-
-
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
@@ -827,7 +705,7 @@ const Application = ({ applicationId }) => {
             </div>
             <div className="w-full flex justify-end">
               <input
-                style={{ backgroundImage: "url(" + RegisterButton + ")"}}
+                style={{ backgroundImage: 'url(' + RegisterButton + ')' }}
                 type="submit"
                 className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
                 value=""
