@@ -47,7 +47,7 @@ const faq = [
     },
     {
       question: 'When does registration close?',
-      answer: 'Registration closes on October 29th, 2023. Apply ASAP!',
+      answer: 'Registration closes on October 25th, 2023. Apply ASAP!',
     },
   ],
 ];
