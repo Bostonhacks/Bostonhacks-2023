@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../firebase/firebase-config';
-import { updateDoc, doc } from 'firebase/firestore';
+import { updateDoc, doc, addDoc } from 'firebase/firestore';
 import { query, collection, getDocs, where } from 'firebase/firestore';
 
 import Application from './Application';
@@ -12,7 +12,6 @@ import Application from './Application';
 const Portal = () => {
   const [user, loading] = useAuthState(auth);
   const [application, setApplication] = useState({});
-  const [qrCode, setQrCode] = useState('');
   const navigate = useNavigate();
   const applicationTypes = [
     'Submitted',
@@ -56,6 +55,13 @@ const Portal = () => {
         setApplication({ ...doc.docs[0].data(), id: doc.docs[0].id });
         // Stop calling the function
         clearInterval(intervalId);
+      } else {
+        await addDoc(collection(db, 'applications'), {
+          uid: user.uid,
+          authProvider: 'google',
+          email: user.email,
+          status: 'Not Started',
+        });
       }
     } catch (err) {
       console.error(err);
