@@ -107,7 +107,6 @@ const Application = ({ applicationId }) => {
     control,
     formState: { errors },
   } = useForm();
-  const smallScreen = useMediaQuery({ maxWidth: 850 });
 
   // Function runs on application form submission.
   const onSubmit = async (data) => {
@@ -173,9 +172,7 @@ const Application = ({ applicationId }) => {
     };
   }, []);
 
-  return smallScreen ? (
-    <div>Mobile site coming soon, please apply on desktop for now!</div>
-  ) : (
+  return (
     <div
       style={{
         background:
@@ -185,14 +182,14 @@ const Application = ({ applicationId }) => {
     >
       <div className="absolute w-[100vw] h-[100vh] flex items-center justify-center">
         <img
-          className="absolute z-0 w-[1000px]"
+          className="absolute z-0 h-[100vh] w-[1000px] object-cover"
           src={BackgroundScroll}
           alt=""
         />
       </div>
 
       <div
-        className="absolute flex justify-center"
+        className="absolute flex justify-center w-full"
         style={{
           position: 'absolute',
           top: '50%',
@@ -200,13 +197,13 @@ const Application = ({ applicationId }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="h-[80vh] w-[90vh] overflow-auto">
+        <div className="h-[80vh] w-[90vh] overflow-auto mx-4">
           {/* Form Title */}
           <div className="text-center font-minecraft">
-            <h2 className="text-[#453119] text-[60px] font-bold">
+            <h2 className="text-[#453119] text-4xl sm:text-5xl font-bold">
               BostonHacks
             </h2>
-            <h3 className="text-white text-[50px]">2023</h3>
+            <h3 className="text-white text-4xl">2023</h3>
           </div>
 
           <hr className="border border-black w-3/4 mx-auto" />
@@ -217,7 +214,7 @@ const Application = ({ applicationId }) => {
           >
             {/* General Information Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 General Information
               </h3>
 
@@ -345,7 +342,7 @@ const Application = ({ applicationId }) => {
 
             {/* Address Information Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Address Information
               </h3>
 
@@ -438,7 +435,7 @@ const Application = ({ applicationId }) => {
 
             {/* Education Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Education
               </h3>
 
@@ -528,7 +525,7 @@ const Application = ({ applicationId }) => {
 
             {/* Misc Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Miscellaneous
               </h3>
 
@@ -624,7 +621,7 @@ const Application = ({ applicationId }) => {
 
             {/* Links Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Links
               </h3>
 
@@ -662,10 +659,10 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <label className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <label className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 What are you most excited about attending Bostonhacks?
               </label>
-              <p className="font-minecraft text-[#453119] text-[10px] font-bold mb-10">
+              <p className="font-minecraft text-[#453119] text-xl font-bold mb-10">
                 (Min 50 Max 400 Characters):
               </p>
               <textarea
@@ -691,7 +688,7 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <h2 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h2 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 MLH Terms and Conditions
               </h2>
 
@@ -771,7 +768,7 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <p className="font-minecraft text-[#453119] text-[30px] font-bold mb-10">
+              <p className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold mb-10">
                 Resume Upload
               </p>
               <input
