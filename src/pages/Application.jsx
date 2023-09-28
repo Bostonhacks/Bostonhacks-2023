@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from 'react-router-dom';
 
 import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes } from 'firebase/storage';
 
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
 
 // Import assets.
 import BackgroundScroll from '../assets/images/ApplicationPage/ScrollBackground.svg';
-import RegisterButton from '../assets/images/ApplicationPage/RegisterButton.svg';
+import RegisterButton from '../components/ApplicationPageComponents/RegisterButton';
 
 // Importing options for some of the questions.
 import {
@@ -107,7 +106,6 @@ const Application = ({ applicationId }) => {
     control,
     formState: { errors },
   } = useForm();
-  const smallScreen = useMediaQuery({ maxWidth: 850 });
 
   // Function runs on application form submission.
   const onSubmit = async (data) => {
@@ -173,9 +171,7 @@ const Application = ({ applicationId }) => {
     };
   }, []);
 
-  return smallScreen ? (
-    <div>Mobile site coming soon, please apply on desktop for now!</div>
-  ) : (
+  return (
     <div
       style={{
         background:
@@ -185,14 +181,14 @@ const Application = ({ applicationId }) => {
     >
       <div className="absolute w-[100vw] h-[100vh] flex items-center justify-center">
         <img
-          className="absolute z-0 w-[1000px]"
+          className="absolute z-0 h-[100vh] w-[1000px] object-cover md:object-none"
           src={BackgroundScroll}
           alt=""
         />
       </div>
 
       <div
-        className="absolute flex justify-center"
+        className="absolute flex justify-center w-full"
         style={{
           position: 'absolute',
           top: '50%',
@@ -200,13 +196,13 @@ const Application = ({ applicationId }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="h-[80vh] w-[90vh] overflow-auto">
+        <div className="h-[70vh] w-[90vh] overflow-auto mx-4">
           {/* Form Title */}
-          <div className="text-center font-minecraft">
-            <h2 className="text-[#453119] text-[60px] font-bold">
+          <div className="text-center font-minecraft md:mt-5">
+            <h2 className="text-[#453119] text-4xl sm:text-5xl font-bold">
               BostonHacks
             </h2>
-            <h3 className="text-white text-[50px]">2023</h3>
+            <h3 className="text-white text-4xl">2023</h3>
           </div>
 
           <hr className="border border-black w-3/4 mx-auto" />
@@ -217,7 +213,7 @@ const Application = ({ applicationId }) => {
           >
             {/* General Information Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 General Information
               </h3>
 
@@ -345,7 +341,7 @@ const Application = ({ applicationId }) => {
 
             {/* Address Information Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Address Information
               </h3>
 
@@ -438,7 +434,7 @@ const Application = ({ applicationId }) => {
 
             {/* Education Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Education
               </h3>
 
@@ -528,7 +524,7 @@ const Application = ({ applicationId }) => {
 
             {/* Misc Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Miscellaneous
               </h3>
 
@@ -624,7 +620,7 @@ const Application = ({ applicationId }) => {
 
             {/* Links Section */}
             <div className="my-[50px]">
-              <h3 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h3 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 Links
               </h3>
 
@@ -662,10 +658,10 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <label className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <label className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 What are you most excited about attending Bostonhacks?
               </label>
-              <p className="font-minecraft text-[#453119] text-[10px] font-bold mb-10">
+              <p className="font-minecraft text-[#453119] text-xl font-bold mb-10">
                 (Min 50 Max 400 Characters):
               </p>
               <textarea
@@ -691,7 +687,7 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <h2 className="font-minecraft text-[#453119] text-[30px] font-bold">
+              <h2 className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold">
                 MLH Terms and Conditions
               </h2>
 
@@ -771,7 +767,7 @@ const Application = ({ applicationId }) => {
             <hr className="border border-black w-3/4 mx-auto" />
 
             <div className="my-[50px]">
-              <p className="font-minecraft text-[#453119] text-[30px] font-bold mb-10">
+              <p className="font-minecraft text-[#453119] text-2xl sm:text-3xl font-bold mb-10">
                 Resume Upload
               </p>
               <input
@@ -784,12 +780,13 @@ const Application = ({ applicationId }) => {
               />
             </div>
             <div className="w-full flex justify-end">
-              <input
+              {/* <input
                 style={{ backgroundImage: 'url(' + RegisterButton + ')' }}
                 type="submit"
                 className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
                 value=""
-              />
+              /> */}
+              <RegisterButton />
             </div>
           </form>
         </div>
