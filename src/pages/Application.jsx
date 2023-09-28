@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import { useNavigate } from 'react-router-dom';
 
 import { auth, db, storage } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes } from 'firebase/storage';
 
 import { useForm, Controller } from 'react-hook-form';
 import Select from 'react-select';
 
 // Import assets.
 import BackgroundScroll from '../assets/images/ApplicationPage/ScrollBackground.svg';
-import RegisterButton from '../assets/images/ApplicationPage/RegisterButton.svg';
+import RegisterButton from '../components/ApplicationPageComponents/RegisterButton';
 
 // Importing options for some of the questions.
 import {
@@ -781,12 +780,13 @@ const Application = ({ applicationId }) => {
               />
             </div>
             <div className="w-full flex justify-end">
-              <input
+              {/* <input
                 style={{ backgroundImage: 'url(' + RegisterButton + ')' }}
                 type="submit"
                 className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
                 value=""
-              />
+              /> */}
+              <RegisterButton />
             </div>
           </form>
         </div>
