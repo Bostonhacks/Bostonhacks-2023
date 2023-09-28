@@ -182,7 +182,7 @@ const Application = ({ applicationId }) => {
     >
       <div className="absolute w-[100vw] h-[100vh] flex items-center justify-center">
         <img
-          className="absolute z-0 h-[100vh] w-[1000px] object-cover"
+          className="absolute z-0 h-[100vh] w-[1000px] object-cover md:object-none"
           src={BackgroundScroll}
           alt=""
         />
@@ -197,9 +197,9 @@ const Application = ({ applicationId }) => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="h-[80vh] w-[90vh] overflow-auto mx-4">
+        <div className="h-[70vh] w-[90vh] overflow-auto mx-4">
           {/* Form Title */}
-          <div className="text-center font-minecraft">
+          <div className="text-center font-minecraft md:mt-5">
             <h2 className="text-[#453119] text-4xl sm:text-5xl font-bold">
               BostonHacks
             </h2>
