@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { query, collection, getDocs, where } from 'firebase/firestore';
+import { query, collection, getDocs, where, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase/firebase-config';
 
 const CheckIn = () => {
@@ -12,15 +12,39 @@ const CheckIn = () => {
         fetchApplications();
     }
 
+    const updateApplicationStatus = async (docId, newStatus) => {
+        const applicationRef = doc(db, "applications", docId);
+
+        try {
+            // Update the status in Firestore
+            await updateDoc(applicationRef, { status: newStatus });
+
+            // Update the status in the application state
+            setApplication({ status: newStatus });
+        } catch (error) {
+            console.log(error);
+            alert("An error has occurred updating the application status");
+        }
+    }
+
     const fetchApplications = async () => {
         try {
             const q = query(collection(db, "applications"), where("email", "==", email));
-            const doc = await getDocs(q);
+            const querySnapshot = await getDocs(q);
 
-            if (doc.docs.length > 0) {
-                const status = doc.docs[0].data().status;
-                setApplication({ status });
+            // Check if there are any documents
+            if (!querySnapshot.empty) {
+                const applicationDoc = querySnapshot.docs[0];
+                const status = applicationDoc.data().status;
+
+                if (status === "Confirmed") {
+                    // If the status is "confirmed," update it to "Checked In"
+                    await updateApplicationStatus(applicationDoc.id, "Checked In");
+                } else {
+                    setApplication({ status });
+                }
             } else {
+                // If there isn't any application, display a message
                 setApplication({ status: "No application found" });
             }
         } catch (error) {
