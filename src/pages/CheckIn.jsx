@@ -41,7 +41,7 @@ const CheckIn = () => {
                     // If the status is "confirmed," update it to "Checked In"
                     await updateApplicationStatus(applicationDoc.id, "Checked In");
                 } else {
-                    setApplication({ status });
+                    setApplication({ status: "You are not confirmed. Please speak to one of the BostonHacks Organizers" });
                 }
             } else {
                 // If there isn't any application, display a message
@@ -56,15 +56,13 @@ const CheckIn = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Email
-                    <input
+                <label>Email</label>
+                <input
                         type="email"
                         placeholder="Please enter your Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                </label>
                 <input type="submit" value="Submit" />
             </form>
 
