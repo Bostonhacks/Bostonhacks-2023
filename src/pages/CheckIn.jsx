@@ -5,9 +5,10 @@ import { db } from '../firebase/firebase-config';
 const CheckIn = () => {
     const [email, setEmail] = useState("");
     const [application, setApplication] = useState({});
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setApplication({ status: "Checking in" });
         // Call the fetchApplications function when the form is submitted
         fetchApplications();
     }
