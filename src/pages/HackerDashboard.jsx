@@ -45,6 +45,15 @@ const HackerDashboard = () => {
       alert("An error has occurred fetching user data");
     }
   }
+  // Function to sign the user out and redirect to the landing page
+  const signOutAndRedirect = async () => {
+    try {
+      await auth.signOut();
+      navigate('/');
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
 
   return (
     <div 
@@ -53,28 +62,33 @@ const HackerDashboard = () => {
       background:
         'linear-gradient(180deg, #2787E4, #64A6E7, #070C36)', //Not the correct gradient yet
     }}>
+      {/* Sign-out button */}
+      <div className="flex justify-center">
+        <button
+          onClick={signOutAndRedirect}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Sign Out
+        </button>
+      </div>
 
       <img src={PinkPurpleBaloons} className='pl-[5vw]'/>
-      <h1 className=''>Welcome hacker!</h1> {/* Font not imported yet*/}
+      <div className="font-misterpixel"> 
+      <div className="text-[4rem] text-center text-white">
+        WELCOME HACKER {application ? application.firstName : 'Loading...'}!
+        <div>YOUR STATUS: {application.status}</div>
+      </div>
       
       <div className='flex flex-row justify-center'>
         <CounterDownTimer/>
         <div className='absolute right-[8vw]'>
-        <img src={OrangeBalloon} />
+          <img src={OrangeBalloon} />
+        </div>
       </div>
+      <div className='text-center text-[3rem]'>UNTIL BOSTONHACKS!</div>
       </div>
-
-      <div className="font-misterpixel">
-      <div className="text-[4rem] justify-center">
-        Welcome Hacker {application ? application.name : 'Loading...'}
-      </div>
-      
-      <div className="text-[4rem] justify-center">
-        Your Status: {application.status}
-      </div>
-      
+      <img src={Llama} className='absolute left-[5vw]'/>
       <img src={Clouds} className='' />
-    </div>
 
     <div
     className='relative items-center'
