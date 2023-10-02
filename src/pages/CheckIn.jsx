@@ -55,21 +55,27 @@ const CheckIn = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className=" xl:mt-12 flex flex-col items-center font-minecraft mx-2">
+            <p className="text-black lg:text-5xl m:text-4xl sm:text-3xl text-center mt-4 pb-7">
+                BostonHacks 2023 Check-In
+            </p>
+        
+            <form onSubmit={handleSubmit} className="space-y-4 text-xl py-5">
                 <label>Email</label>
                 <input
                         type="email"
                         placeholder="Please enter your Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className="border p-2 w-full rounded-md focus:outline-none focus:ring focus:border-blue-300"
                     />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" 
+                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"/>
             </form>
 
             {/* Display application status */}
-            <div>
-                <p>Status: {application.status}</p>
+            <div className="mt-4">
+                <p className=" text-2xl font-semibold">Status: {application.status}</p>
             </div>
         </div>
     )
