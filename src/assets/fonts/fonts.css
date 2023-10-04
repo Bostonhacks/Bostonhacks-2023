@@ -17,3 +17,8 @@
   font-family: 'ft88-bold';
   src: url('./FT88-Bold.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'O4b';
+  src: url('./O4b.ttf');
+}

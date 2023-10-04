@@ -36,9 +36,9 @@ const CountDownTimer = () => {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="flex justify-center space-x-5 mt-10 mb-10">
+    <div className="flex justify-center space-x-5 mt-10 mb-10 w-[60%] h-[60%] text-white">
       <div className="z-50">
-        <div className="relative w-15 h-15 md:w-20 md:h-20">
+        <div className="relative w-55 h-55 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-white text-xs text-center md:text-base">

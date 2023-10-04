@@ -12,6 +12,7 @@ export default {
         minecraft: ['minecraft', 'serif'],
         ft88: ['ft88-reg', 'serif'],
         ft88b: ['ft88-bold', 'serif'],
+        O4b: ['O4b', 'serif'],
       },
       colors: {
         'text-primary': '#FFFFFF', //"#FFFFFF" add this when we don't have a white background
@@ -36,7 +37,7 @@ export default {
     },
     listStyleImage: {
       goldKey: 'url("/src/assets/images/SponsorPage/PerksAssets/GoldKey.svg")',
-    }
+    },
   },
   plugins: [],
 };
