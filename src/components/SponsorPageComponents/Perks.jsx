@@ -49,8 +49,8 @@ const ChoosePerkButton = ({ link }) => {
 
 const Perks = () => {
   return (
-    <div className='z-10'>
-        <div className="flex flex-col lg:flex-row lg:overflow-x-scroll lg:gap-[80px] lg:no-scrollbar z-10">
+    <div className="z-10">
+      <div className="flex flex-col lg:flex-row lg:overflow-x-scroll lg:gap-[80px] lg:no-scrollbar z-10">
         <div className="items-center flex flex-col lg:ml-[80px] z-10">
           <PerksTitle perkAmount={500} subHeading={'Sneak Peak'} />
 
@@ -64,8 +64,8 @@ const Perks = () => {
             </ul>
           </div>
 
-          <ChoosePerkButton />
-          <div className='mb-20 lg:mb-0'/>
+          {/* <ChoosePerkButton /> */}
+          <div className="mb-20 lg:mb-0" />
         </div>
 
         <div className="items-center flex flex-col z-10">
@@ -87,8 +87,8 @@ const Perks = () => {
             </ul>
           </div>
 
-          <ChoosePerkButton />
-          <div className='mb-20 lg:mb-0'/>
+          {/* <ChoosePerkButton /> */}
+          <div className="mb-20 lg:mb-0" />
         </div>
 
         <div className="items-center flex flex-col z-10">
@@ -121,8 +121,8 @@ const Perks = () => {
             </ul>
           </div>
 
-          <ChoosePerkButton />
-          <div className='mb-20 lg:mb-0'/>
+          {/* <ChoosePerkButton /> */}
+          <div className="mb-20 lg:mb-0" />
         </div>
 
         <div className="items-center flex flex-col lg:w-[333px z-10">
@@ -159,8 +159,8 @@ const Perks = () => {
             </ul>
           </div>
 
-          <ChoosePerkButton />
-          <div className='mb-20 lg:mb-0'/>
+          {/* <ChoosePerkButton /> */}
+          <div className="mb-20 lg:mb-0" />
         </div>
 
         <div className="items-center flex flex-col lg:w-[333px] z-10">
@@ -199,7 +199,7 @@ const Perks = () => {
             </ul>
           </div>
 
-          <ChoosePerkButton />
+          {/* <ChoosePerkButton /> */}
         </div>
 
         {/* <div className="m-0" /> */}
@@ -240,7 +240,10 @@ const Perks = () => {
         </div>
       </div>
 
-      <img src={CowLeftBlock} className='lg:-mt-[60px] h-[209px] lg:h-auto mt-[55px] lg:mt-0 mb-[61px] lg:mb-0'/>
+      <img
+        src={CowLeftBlock}
+        className="lg:-mt-[60px] h-[209px] lg:h-auto mt-[55px] lg:mt-0 mb-[61px] lg:mb-0"
+      />
     </div>
   );
 };

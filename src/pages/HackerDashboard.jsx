@@ -109,12 +109,17 @@ const HackerDashboard = () => {
         >
           <img src={Logo} alt="" className="w-10 h-10" />
         </button>
-        <button
-          onClick={signOutAndRedirect}
-          className="font-minecraft text-white text-lg lg:text-xl hover:text-gray-300"
-        >
-          Sign Out
-        </button>
+        <div className="font-minecraft text-lg lg:text-xl text-white">
+          <p>Signed in as: {user.email}</p>
+          <div className="w-full text-right">
+            <button
+              onClick={signOutAndRedirect}
+              className="hover:text-gray-300 "
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
       </nav>
       {/* Sign-out button */}
 
