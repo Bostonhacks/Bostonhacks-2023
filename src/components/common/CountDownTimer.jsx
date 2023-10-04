@@ -36,7 +36,7 @@ const CountDownTimer = () => {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="flex justify-center space-x-5 mt-10 mb-10 w-[60%] h-[60%] text-white">
+    <div className="flex justify-center space-x-5 mt-10 mb-10 w-full h-[60%] text-white">
       <div className="z-50">
         <div className="relative w-55 h-55 md:w-20 md:h-20">
           <img src={heartIcon} className="object-cover w-full h-full" />
@@ -46,7 +46,7 @@ const CountDownTimer = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold text-black">
           DAYS
         </p>
       </div>
@@ -60,7 +60,7 @@ const CountDownTimer = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold text-black">
           HOURS
         </p>
       </div>
@@ -74,7 +74,7 @@ const CountDownTimer = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold text-black">
           MINUTES
         </p>
       </div>
@@ -88,7 +88,7 @@ const CountDownTimer = () => {
             </div>
           </div>
         </div>
-        <p className="text-center text-xs md:text-base font-misterpixel font-bold">
+        <p className="text-center text-xs md:text-base font-misterpixel font-bold text-black">
           SECONDS
         </p>
       </div>
