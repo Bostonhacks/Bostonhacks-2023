@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { db, auth } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { query, collection, getDocs, where, addDoc } from 'firebase/firestore';
+import { query, collection, getDocs, where } from 'firebase/firestore';
 
 import PinkPurpleBaloons from '../assets/images/HackerDashboard/PinkPurpleBalloons.svg';
 import OrangeBalloon from '../assets/images/HackerDashboard/orange balloon.svg';
@@ -10,7 +10,7 @@ import Llama from '../assets/images/HackerDashboard/Llama  (Traced).svg';
 import Clouds from '../assets/images/HackerDashboard/Red cloud.png';
 import CounterDownTimer from '../components/common/CountDownTimer';
 import Bush from '../assets/images/HackerDashboard/bush 1.svg';
-import Stars from '../assets/images/HackerDashboard/stars.svg';
+import Stars from '../assets/images/HackerDashboard/Stars.svg';
 import NotStarted from '../assets/images/HackerDashboard/NotStarted.png';
 import Submitted from '../assets/images/HackerDashboard/Submitted.png';
 import Waitlisted from '../assets/images/HackerDashboard/Waitlisted.png';
