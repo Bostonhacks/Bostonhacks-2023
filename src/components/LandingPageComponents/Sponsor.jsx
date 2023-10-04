@@ -9,20 +9,25 @@ import wolframSponsor from '../../assets/images/LandingPage/wolframSponsor.png';
 import capitalOneSponsor from '../../assets/images/LandingPage/capitalOneSponsor.png';
 import xyzSponsor from '../../assets/images/LandingPage/xyzSponsor.png';
 import cakeSponsor from '../../assets/images/LandingPage/cakeSponsor.png';
+import sponsorBackground from '../../assets/images/LandingPage/sponsors-white.svg';
+import postmanSponsor from '../../assets/images/LandingPage/postmanSponsor.png';
+import echoSponsor from '../../assets/images/LandingPage/echoSponsor.png';
+import bucsSponsor from '../../assets/images/LandingPage/bucsSponsor.png';
+import sublimeSponsor from '../../assets/images/LandingPage/sublimeSponsor.png';
 
 export default function Sponsor() {
   const sponsors = [
     {
       id: 1,
-      image: sargentSponsor
+      image: echoSponsor
     },
     {
       id: 2,
-      image: capitalOneSponsor
+      image: wolframSponsor
     },
     {
       id: 3,
-      image: wolframSponsor
+      image: capitalOneSponsor
     },
     {
       id: 4,
@@ -35,6 +40,22 @@ export default function Sponsor() {
     {
       id: 6,
       image: cakeSponsor
+    },
+    {
+      id: 7,
+      image: sargentSponsor
+    },
+    {
+      id: 8,
+      image: postmanSponsor
+    },
+    {
+      id: 9,
+      image: bucsSponsor
+    },
+    {
+      id: 10,
+      image: sublimeSponsor
     }
   ]
   return (
@@ -48,10 +69,10 @@ export default function Sponsor() {
         </h2>
         <img className="z-20 absolute" src={TitleBG} alt="TitleBG" />
       </div>
-      <div className="grid z-10 grid-cols-2 lg:grid-cols-3 gap-14 lg:gap-20 mt-20 mx-[5vw]">
+      <div className="grid z-10 grid-cols-2 lg:grid-cols-5 gap-14 lg:gap-20 mt-20 mx-[5vw]">
         {sponsors.map((sponsor) => (
           <div key={sponsor.id} className='relative'>
-            <img src={sponsorFaceBox} alt="sponsor" className="w-32 h-32 mx-auto" />
+            <img src={sponsorBackground} alt="sponsor" className="w-32 h-32 mx-auto" />
             <img src={sponsor.image} alt={`Sponsor ${sponsor.id}`} className="absolute w-auto h-auto top-0 left-0 object-cover scale-75" />
             <img src={sponsorHeartGroup} alt="sponsor" className="absolute top-20 w-32 h-32" />
           </div>
