@@ -12,7 +12,7 @@ export default function Login() {
   useEffect(() => {
     if (loading) return;
 
-    if (user) navigate('/portal');
+    if (user) navigate('/dashboard');
   }, [user, loading, navigate]);
 
   return (

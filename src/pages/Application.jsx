@@ -94,10 +94,6 @@ const Application = ({ applicationId }) => {
   };
 
   // Display message to user while form is loading / has finished loading.
-  const [programmingInputs, setProgrammingInputs] = React.useState([
-    { language: '', experienceLevel: '' },
-  ]);
-  const [user, loading] = useAuthState(auth);
   const [resume, setResume] = useState(null);
   const navigate = useNavigate();
   const {
@@ -150,7 +146,7 @@ const Application = ({ applicationId }) => {
 
       uploadBytes(resumeRef, resume).then(() => {
         alert('Application Submitted');
-        navigate('/');
+        navigate('/login');
       });
     } else {
       alert('please upload a resume');
@@ -780,12 +776,6 @@ const Application = ({ applicationId }) => {
               />
             </div>
             <div className="w-full flex justify-end">
-              {/* <input
-                style={{ backgroundImage: 'url(' + RegisterButton + ')' }}
-                type="submit"
-                className="cursor-pointer w-[150px] h-[75px] bg-contain bg-no-repeat"
-                value=""
-              /> */}
               <RegisterButton />
             </div>
           </form>
