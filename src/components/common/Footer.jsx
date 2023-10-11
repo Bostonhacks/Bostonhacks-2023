@@ -42,7 +42,7 @@ const Footer = () => {
         <p className="text-center text-sm">Forest Pixel Art by Eder Muniz</p>
       </div>
       <div className='relative'>
-        <img src={FooterCloudImage} className='absolute bottom-20 z-0 object-cover h-auto lg:h-[865px] 2xl:h-auto 2xl:w-full' onDragStart={(event)=> event.preventDefault()}/>
+        <img src={FooterCloudImage} className='absolute bottom-20 z-0 object-cover w-full h-auto lg:h-[865px] 2xl:h-auto 2xl:w-full' onDragStart={(event)=> event.preventDefault()}/>
       </div>
     </div>
   );
