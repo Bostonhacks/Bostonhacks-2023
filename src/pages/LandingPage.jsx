@@ -21,6 +21,16 @@ const LandingPage = () => {
           'linear-gradient(180deg, #15011F 0%, #240732 24.91%, #070C36 39.22%, #0D3166 56.01%, #1B7BD8 75.57%, #85BAEE 90.34%, #FFFFFF 98.65%)',
       }}
     >
+      <a
+        id="mlh-trust-badge"
+        className="z-50 absolute w-[10vw] left-[75px] lg:w-[100px] lg:left-[75px] top-0"
+        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=white"
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-white.svg"
+          alt="Major League Hacking 2024 Hackathon Season"
+        />
+      </a>
       <MentorApply />
       <NatureBG />
       <LandingNav />

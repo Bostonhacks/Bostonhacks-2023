@@ -46,7 +46,7 @@ const TrackModals = () => {
               setTrack2Open(true);
             }}
           >
-            <img src={track2} alt="track 2" className="mb-[1vw]" />
+            <img src={track2} alt="track 2" className="mb-[1vw] lg:ml-5" />
             <label className="font-misterpixel text-2xl text-white">
               <span className="border-y-2 md:border-y-4 md:py-1">
                 INCLUSIVE
