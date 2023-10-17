@@ -4,7 +4,7 @@ import DialogBox from '../../assets/images/DialogBoxFull.png';
 
 const Feliz = ({ children }) => {
   return (
-    <div className="flex px-10 lg:px-[25%] xl:px-[30%] w-full h-full place-content-center max-sm:mt-0 max-sm:p-10 mt-80 p-40">
+    <div className="flex px-10 lg:px-[20%] xl:px-[25%] w-full h-full place-content-center max-sm:mt-0 max-sm:p-10 mt-80 p-40">
       <div className="relative flex items-end justify-center">
         <img className="object-cover" src={FelizPic} />
       </div>
