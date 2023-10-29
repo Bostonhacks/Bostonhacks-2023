@@ -2,7 +2,14 @@ import { useEffect, useState } from 'react';
 import { db, auth } from '../firebase/firebase-config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { query, collection, getDocs, where } from 'firebase/firestore';
+import {
+  query,
+  collection,
+  getDocs,
+  where,
+  doc,
+  updateDoc,
+} from 'firebase/firestore';
 
 import PinkPurpleBaloons from '../assets/images/HackerDashboard/PinkPurpleBalloons.svg';
 import OrangeBalloon from '../assets/images/HackerDashboard/orange balloon.svg';
@@ -20,12 +27,12 @@ import Confirmed from '../assets/images/HackerDashboard/Confirmed.png';
 import CheckedIn from '../assets/images/HackerDashboard/CheckedIn.png';
 import Declined from '../assets/images/HackerDashboard/Declined.png';
 import Logo from '../assets/images/bhacks-logo.svg';
-import Application from './Application';
 import ApplicationsClosed from '../components/ApplicationPageComponents/ApplicationsClosed';
 
 const HackerDashboard = () => {
   const [user, loading] = useAuthState(auth);
   const [application, setApplication] = useState(null);
+  const [acceptModalOpen, setAcceptModalOpen] = useState(false);
   const navigate = useNavigate();
   // const applicationTypes = ["Submitted", "Waitlisted", "Rejected", "Declined", "Confirmed", "Accepted", "Checked In"];
 
@@ -66,6 +73,24 @@ const HackerDashboard = () => {
     } catch (error) {
       console.error('Error signing out:', error);
     }
+  };
+
+  const confirmUser = async (userId) => {
+    const userDoc = doc(db, 'applications', userId);
+    await updateDoc(userDoc, { status: 'Confirmed' });
+    setApplication({
+      ...application,
+      status: 'Confirmed',
+    });
+  };
+
+  const declineUser = async (userId) => {
+    const userDoc = doc(db, 'applications', userId);
+    await updateDoc(userDoc, { status: 'Declined' });
+    setApplication({
+      ...application,
+      status: 'Declined',
+    });
   };
 
   const ImageSelect = (status) => {
@@ -129,6 +154,32 @@ const HackerDashboard = () => {
         <div className="text-xl lg:leading-normal lg:text-[4rem] text-center text-white">
           WELCOME HACKER {application ? application.firstName : 'Loading...'}!
           <div>YOUR STATUS: {application.status}</div>
+          {application.status === 'Accepted' && (
+            <div className="text-sm lg:text-xl flex flex-col w-full items-center">
+              <div className="w-2/3">
+                <h3 className="my-10">
+                  Congratulations on being accepted into BostonHacks, please
+                  confirm that you are coming in order for us to be better
+                  prepared! If your plans have changed and can no longer attend
+                  BostonHacks, please decline.
+                </h3>
+                <div>
+                  <button
+                    className="mr-10 hover:text-gray-600"
+                    onClick={() => confirmUser(application?.id)}
+                  >
+                    I Confirm
+                  </button>
+                  <button
+                    className="hover:text-gray-600"
+                    onClick={() => declineUser(application?.id)}
+                  >
+                    I Decline
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="font-minecraft flex flex-row justify-center">
