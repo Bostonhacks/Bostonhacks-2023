@@ -21,6 +21,7 @@ import CheckedIn from '../assets/images/HackerDashboard/CheckedIn.png';
 import Declined from '../assets/images/HackerDashboard/Declined.png';
 import Logo from '../assets/images/bhacks-logo.svg';
 import Application from './Application';
+import ApplicationsClosed from '../components/ApplicationPageComponents/ApplicationsClosed';
 
 const HackerDashboard = () => {
   const [user, loading] = useAuthState(auth);
@@ -89,11 +90,11 @@ const HackerDashboard = () => {
   };
 
   return !application ? (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center font-minecraft font-3xl">
+    <div className="w-[100vw] h-[100vh] flex justify-center font-minecraft text-3xl">
       Loading...
     </div>
   ) : application.status === 'Not Started' ? (
-    <Application applicationId={application.id} />
+    <ApplicationsClosed />
   ) : (
     <div
       className=""
