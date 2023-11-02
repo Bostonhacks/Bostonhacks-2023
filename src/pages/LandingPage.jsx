@@ -9,7 +9,7 @@ import NatureBG from '../components/LandingPageComponents/NatureBG';
 import TrackModals from '../components/LandingPageComponents/TrackModals';
 import Schedule from '../components/LandingPageComponents/Schedule';
 import Sponsor from '../components/LandingPageComponents/Sponsor';
-import ApplyButton from '../components/LandingPageComponents/ApplyButton';
+import LoginButton from '../components/LandingPageComponents/LoginButton';
 import MentorApply from '../components/LandingPageComponents/MentorApply';
 
 const LandingPage = () => {
@@ -35,7 +35,7 @@ const LandingPage = () => {
       <NatureBG />
       <LandingNav />
       <Title />
-      <ApplyButton />
+      <LoginButton />
       <SponsorButton />
       <Feliz>
         Hi! Welcome to the BostonHacks Land! Let me walk you through as you

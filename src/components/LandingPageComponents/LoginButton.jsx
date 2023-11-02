@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InitialButtonState from '../../assets/images/LandingPage/ApplyButton1.svg';
-import HoverButtonState from '../../assets/images/LandingPage/ApplyButton2.svg';
-import ClickedButtonState from '../../assets/images/LandingPage/ApplyButton3.svg';
+import InitialButtonState from '../../assets/images/LandingPage/LoginButton1.svg';
+import HoverButtonState from '../../assets/images/LandingPage/LoginButton2.svg';
+import ClickedButtonState from '../../assets/images/LandingPage/LoginButton3.svg';
 
 const ApplyButton = () => {
   const [image, setImage] = useState(InitialButtonState);
