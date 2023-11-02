@@ -33,17 +33,17 @@ const faq = [
     {
       question: 'Do I need experience?',
       answer:
-        'No experience is necessary. We will have plenty of mentros and resources available, along with several workshops targeted for beginners. Come learn and experience your first hackathon at BostonHacks!',
+        'No experience is necessary. We will have plenty of mentors and resources available, along with several workshops targeted for beginners. Come learn and experience your first hackathon at BostonHacks!',
     },
     {
       question: 'Does it cost anything?',
       answer:
-        "BostonHacks is 100% free. You don't have to spend a dime! Unfortunately, we won' be providing any travel reimbursements this year.",
+        "BostonHacks is 100% free. You don't have to spend a dime! Unfortunately, we won't be providing any travel reimbursements this year.",
     },
     {
       question: 'Can we form teams?',
       answer:
-        "Of course you can! We encourage people to work in teams of up to four people. You may opt-in to team formation through our Discord Server which will match you with an ideal team. You can work along, but it won't be as fun :(",
+        "Of course you can! We encourage people to work in teams of up to four people. You may opt-in to team formation through our Discord Server which will match you with an ideal team. You can work alone, but it won't be as fun :(",
     },
     {
       question: 'When does registration close?',
