@@ -2,7 +2,6 @@ import React from 'react';
 import sponsorFaceBox from '../../assets/images/sponsorFaceBox.svg';
 import sponsorHeartGroup from '../../assets/images/sponsorHeartGroup.svg';
 import TitleBG from '../../assets/images/TitleBG.svg';
-import ApplyButton from './ApplyButton';
 import sparkSponsor from '../../assets/images/LandingPage/sparkSponsor.png';
 import sargentSponsor from '../../assets/images/LandingPage/sargentSponsor.png';
 import wolframSponsor from '../../assets/images/LandingPage/wolframSponsor.png';
@@ -19,45 +18,45 @@ export default function Sponsor() {
   const sponsors = [
     {
       id: 1,
-      image: echoSponsor
+      image: echoSponsor,
     },
     {
       id: 2,
-      image: wolframSponsor
+      image: wolframSponsor,
     },
     {
       id: 3,
-      image: capitalOneSponsor
+      image: capitalOneSponsor,
     },
     {
       id: 4,
-      image: xyzSponsor
+      image: xyzSponsor,
     },
     {
       id: 5,
-      image: sparkSponsor
+      image: sparkSponsor,
     },
     {
       id: 6,
-      image: cakeSponsor
+      image: cakeSponsor,
     },
     {
       id: 7,
-      image: sargentSponsor
+      image: sargentSponsor,
     },
     {
       id: 8,
-      image: postmanSponsor
+      image: postmanSponsor,
     },
     {
       id: 9,
-      image: bucsSponsor
+      image: bucsSponsor,
     },
     {
       id: 10,
-      image: sublimeSponsor
-    }
-  ]
+      image: sublimeSponsor,
+    },
+  ];
   return (
     <div className="flex justify-center items-center flex-col mb-40">
       <div
@@ -71,15 +70,25 @@ export default function Sponsor() {
       </div>
       <div className="grid z-10 grid-cols-2 lg:grid-cols-5 gap-14 lg:gap-20 mt-20 mx-[5vw]">
         {sponsors.map((sponsor) => (
-          <div key={sponsor.id} className='relative'>
-            <img src={sponsorBackground} alt="sponsor" className="w-32 h-32 mx-auto" />
-            <img src={sponsor.image} alt={`Sponsor ${sponsor.id}`} className="absolute w-auto h-auto top-0 left-0 object-cover scale-75" />
-            <img src={sponsorHeartGroup} alt="sponsor" className="absolute top-20 w-32 h-32" />
+          <div key={sponsor.id} className="relative">
+            <img
+              src={sponsorBackground}
+              alt="sponsor"
+              className="w-32 h-32 mx-auto"
+            />
+            <img
+              src={sponsor.image}
+              alt={`Sponsor ${sponsor.id}`}
+              className="absolute w-auto h-auto top-0 left-0 object-cover scale-75"
+            />
+            <img
+              src={sponsorHeartGroup}
+              alt="sponsor"
+              className="absolute top-20 w-32 h-32"
+            />
           </div>
         ))}
       </div>
-
-      {/* <ApplyButton /> */}
     </div>
   );
 }
