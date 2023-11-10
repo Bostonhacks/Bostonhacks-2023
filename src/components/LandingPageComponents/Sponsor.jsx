@@ -13,7 +13,8 @@ import postmanSponsor from '../../assets/images/LandingPage/postmanSponsor.png';
 import echoSponsor from '../../assets/images/LandingPage/echoSponsor.png';
 import bucsSponsor from '../../assets/images/LandingPage/bucsSponsor.png';
 import sublimeSponsor from '../../assets/images/LandingPage/sublimeSponsor.png';
-
+import incaSponsor from '../../assets/images/LandingPage/incaSponsor.png';
+import claimSponsor from '../../assets/images/LandingPage/claimSponsor.png';
 export default function Sponsor() {
   const sponsors = [
     {
@@ -56,6 +57,15 @@ export default function Sponsor() {
       id: 10,
       image: sublimeSponsor,
     },
+    {
+      id: 11,
+      image: incaSponsor,
+    },
+    {
+      id: 12,
+      image: claimSponsor,
+    },
+
   ];
   return (
     <div className="flex justify-center items-center flex-col mb-40">
