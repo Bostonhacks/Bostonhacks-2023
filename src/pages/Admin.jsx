@@ -13,7 +13,7 @@ import {
   getDocs,
 } from 'firebase/firestore';
 import { db } from '../firebase/firebase-config';
-// import { acceptlist, rejectList, waitList } from './acceptListR1';
+import { acceptlist, rejectList, waitList } from './acceptListR1';
 
 export default function Admin() {
   const [user, loading] = useAuthState(auth);
@@ -105,7 +105,7 @@ export default function Admin() {
 
   return (
     <div>
-      {/* Check user's email, if admin show application
+      {/* Check user's email, if admin show application */}
       {admins.includes(user?.email) && (
         <div>
           <button
@@ -133,7 +133,7 @@ export default function Admin() {
             Waitlist
           </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

@@ -10,11 +10,13 @@ import SponsorPage from './pages/SponsorPage';
 import Login from './pages/Login';
 import Dashboard from './pages/HackerDashboard';
 import CheckIn from './pages/CheckIn';
+import Admin from './pages/Admin';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<LandingPage />} />
+      <Route path="admin" element={<Admin />} />
       <Route path="sponsor" element={<SponsorPage />} />
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Dashboard />} />
