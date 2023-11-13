@@ -38,7 +38,7 @@ const CheckIn = () => {
                 const applicationDoc = querySnapshot.docs[0];
                 const status = applicationDoc.data().status;
 
-                if (status === "Confirmed") {
+                if (status === "Confirmed" || status == "Checked In") {
                     // If the status is "confirmed," update it to "Checked In"
                     await updateApplicationStatus(applicationDoc.id, "Checked In");
                 } else {
