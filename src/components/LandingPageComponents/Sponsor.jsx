@@ -15,6 +15,10 @@ import bucsSponsor from '../../assets/images/LandingPage/bucsSponsor.png';
 import sublimeSponsor from '../../assets/images/LandingPage/sublimeSponsor.png';
 import incaSponsor from '../../assets/images/LandingPage/incaSponsor.png';
 import claimSponsor from '../../assets/images/LandingPage/claimSponsor.png';
+import cdsSponsor from '../../assets/images/LandingPage/BUCDS.png';
+import haririSponsor from '../../assets/images/LandingPage/BUComputingSponsor.png';
+import eceSponsor from '../../assets/images/LandingPage/BUECESponsor.png';
+
 export default function Sponsor() {
   const sponsors = [
     {
@@ -64,6 +68,18 @@ export default function Sponsor() {
     {
       id: 12,
       image: claimSponsor,
+    },
+    {
+      id: 13,
+      image: cdsSponsor,
+    },
+    {
+      id: 14,
+      image: haririSponsor,
+    },
+    {
+      id: 15,
+      image: eceSponsor,
     },
 
   ];
