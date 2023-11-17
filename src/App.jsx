@@ -10,6 +10,7 @@ import SponsorPage from './pages/SponsorPage';
 import Login from './pages/Login';
 import Dashboard from './pages/HackerDashboard';
 import CheckIn from './pages/CheckIn';
+import CheckInCount from './pages/CheckInCount';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="checkin" element={<CheckIn />} />
+      <Route path="checkincount" element={<CheckInCount />} />
     </Route>
   )
 );
