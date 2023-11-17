@@ -6,6 +6,7 @@ import cloudright from '../../assets/images/LandingPage/Background/cloud_schedul
 import cloudbottom from '../../assets/images/LandingPage/Background/cloud_schedule_top.svg';
 import cloudtop from '../../assets/images/LandingPage/Background/cloud_schedule_bottom.svg';
 import felixPlatform from '../../assets/images/LandingPage/felixPlatform.svg';
+import schedule from '../../assets/images/LandingPage/schedule.svg';
 import mobileSchedule from '../../assets/images/LandingPage/mobileSchedule.svg';
 export default function Schedule() {
   return (
@@ -25,9 +26,17 @@ export default function Schedule() {
           alt="cloudleft"
         />
       </div>
-      {/* <img src={scheduleTimeLine} className='max-sm:hidden' alt="schedule"/>
-        <img src={mobileSchedule} className='sm:hidden max-sm:scale-125 p-10 max-sm:mb-20' alt="mobile schedule"/> */}
-      <h1 className="text-white text-4xl">Schedule Coming Soon!</h1>
+      <img
+        src={schedule}
+        className="max-sm:hidden my-[2vh]"
+        alt="schedule"
+        draggable={false}
+      />
+      <img
+        src={mobileSchedule}
+        className="sm:hidden max-sm:scale-125 p-10 my-[100px] "
+        alt="mobile schedule"
+      />
       <img
         src={cloudtop}
         className="relative max-md:hidden left-96"
