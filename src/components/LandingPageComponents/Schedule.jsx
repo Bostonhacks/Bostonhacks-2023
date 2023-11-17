@@ -9,6 +9,7 @@ import felixPlatform from '../../assets/images/LandingPage/felixPlatform.svg';
 import schedule from '../../assets/images/LandingPage/schedule.svg';
 import mobileSchedule from '../../assets/images/LandingPage/mobileSchedule.svg';
 import ScheduleComponent from './ScheduleComponent';
+
 export default function Schedule() {
   const saturday = [
     { time: '9:00 AM', tableEntry: 'CHECK - IN', location: 'METCALF LOBBY' },
@@ -19,56 +20,51 @@ export default function Schedule() {
     },
     {
       time: '10:30 AM',
-      tableEntry: 'BEGIN HACKING / FINDING TEAMS',
-      location: 'METCALF BALLROOM',
+      tableEntry: 'TEAM FORMATION',
+      location: 'GSU BACKCOURT',
     },
     {
       time: '11:20 AM',
       tableEntry: 'HACKATHON 101',
       location: 'GSU BACKCOURT',
     },
-    { time: '11:50 PM', tableEntry: 'INTRO TO GITHUB', location: 'TERRANCE' },
-    { time: '12:00 PM', tableEntry: 'LUNCH', location: 'ZISKAND LOUNGE' },
-    { time: '1:00 PM', tableEntry: 'POSTMAN WORKSHOP', location: 'TERRANCE' },
+    { time: '11:50 PM', tableEntry: 'INTRO TO GITHUB', location: 'TERRACE' },
+    { time: '12:00 PM', tableEntry: 'LUNCH BREAK', location: 'ZISKAND LOUNGE' },
+    { time: '1:00 PM', tableEntry: 'API 101', location: 'TERRACE' },
     {
       time: '',
-      tableEntry: 'INTRO TO FULL-STACK DEV',
-      location: 'TERRANCE',
+      tableEntry: 'INTRO TO WEB DEV',
+      location: 'GSU BACKCOURT',
     },
-    { time: '2:00 PM', tableEntry: 'FIGMA WORKSHOP', location: 'TERRANCE' },
+    { time: '2:00 PM', tableEntry: 'FIGMA WORKSHOP', location: 'TERRACE' },
     {
       time: '',
-      tableEntry: 'INTRO TO DA WORKSHOP',
+      tableEntry: 'ETHICAL AI',
       location: 'GSU BACKCOURT',
     },
     {
       time: '3:00 PM',
-      tableEntry: 'INTERMEDIATE WEB DEV WORKSHOP',
-      location: 'TERRANCE',
+      tableEntry: 'WEB DEV (INTERMEDIATE)',
+      location: 'GSU BACKCOURT',
     },
-    { time: '4:00 PM', tableEntry: 'UNITY WORKSHOP', location: 'TERRANCE' },
+    { time: '4:00 PM', tableEntry: 'UNITY WORKSHOP', location: 'TERRACE' },
     {
       time: '',
       tableEntry: 'INTRO TO AI/ML',
       location: 'GSU BACKCOURT',
     },
-    { time: '5:00 PM', tableEntry: 'RESUME WORKSHOP', location: 'TERRANCE' },
+    { time: '5:00 PM', tableEntry: 'RESUME WORKSHOP', location: 'TERRACE' },
     { time: '', tableEntry: 'MLH WORKSHOP', location: 'GSU BACKCOURT' },
     { time: '6:30 PM', tableEntry: 'DINNER', location: 'ZISKAND LOUNGE' },
-    { time: '7:30 PM', tableEntry: 'ECHO 3D WORKSHOP', location: 'TBD' },
+    { time: '7:30 PM', tableEntry: 'ECHO 3D WORKSHOP', location: 'TERRACE' },
     {
       time: '8:30 PM',
-      tableEntry: 'INTRO TO TECHNICAL INTERVIEWS WORKSHOP',
-      location: 'TERRANCE',
+      tableEntry: 'INTRO TO LEETCODE',
+      location: 'TERRACE',
     },
     { time: '', tableEntry: 'JEOPARDY', location: 'GSU BACKCOURT' },
-    { time: '9:30 PM', tableEntry: 'MARIO KART/SMASH', location: 'TERRANCE' },
-    {
-      time: '10:00 PM',
-      tableEntry: 'SLEEP SPACES OPEN',
-      location: 'GSU BASEMENT',
-    },
-    { time: '10:30 PM', tableEntry: 'KAREOKE', location: 'TERRANCE' },
+    { time: '9:30 PM', tableEntry: 'MARIO KART/SMASH', location: 'TERRACE' },
+    { time: '10:30 PM', tableEntry: 'KAREOKE', location: 'TERRACE' },
     {
       time: '',
       tableEntry: 'BALLOON ANIMALS',
@@ -77,68 +73,26 @@ export default function Schedule() {
   ];
 
   const sunday = [
-    { time: '9:00 AM', tableEntry: 'CHECK - IN', location: 'METCALF LOBBY' },
     {
-      time: '10:00 AM',
-      tableEntry: 'OPENING CEREMONY',
+      time: '12:00 AM',
+      tableEntry: 'MIDNIGHT SNACK',
       location: 'METCALF BALLROOM',
+    },
+    {
+      time: '1:00 AM',
+      tableEntry: 'SLEEP',
+      location: 'GSU BASEMENT',
     },
     {
       time: '10:30 AM',
-      tableEntry: 'BEGIN HACKING / FINDING TEAMS',
+      tableEntry: 'SURPRISE WORKSHOP',
+      location: 'METCALF BALROOM',
+    },
+    { time: '11:00 AM', tableEntry: 'JUDGING STARTS', location: '' },
+    {
+      time: '2:00 PM',
+      tableEntry: 'CLOSING CEREMONY',
       location: 'METCALF BALLROOM',
-    },
-    {
-      time: '11:20 AM',
-      tableEntry: 'HACKATHON 101',
-      location: 'GSU BACKCOURT',
-    },
-    { time: '11:50 PM', tableEntry: 'INTRO TO GITHUB', location: 'TERRANCE' },
-    { time: '12:00 PM', tableEntry: 'LUNCH', location: 'ZISKAND LOUNGE' },
-    { time: '1:00 PM', tableEntry: 'POSTMAN WORKSHOP', location: 'TERRANCE' },
-    {
-      time: '',
-      tableEntry: 'INTRO TO FULL-STACK DEV',
-      location: 'TERRANCE',
-    },
-    { time: '2:00 PM', tableEntry: 'FIGMA WORKSHOP', location: 'TERRANCE' },
-    {
-      time: '',
-      tableEntry: 'INTRO TO DA WORKSHOP',
-      location: 'GSU BACKCOURT',
-    },
-    {
-      time: '3:00 PM',
-      tableEntry: 'INTERMEDIATE WEB DEV WORKSHOP',
-      location: 'TERRANCE',
-    },
-    { time: '4:00 PM', tableEntry: 'UNITY WORKSHOP', location: 'TERRANCE' },
-    {
-      time: '',
-      tableEntry: 'INTRO TO AI/ML',
-      location: 'GSU BACKCOURT',
-    },
-    { time: '5:00 PM', tableEntry: 'RESUME WORKSHOP', location: 'TERRANCE' },
-    { time: '', tableEntry: 'MLH WORKSHOP', location: 'GSU BACKCOURT' },
-    { time: '6:30 PM', tableEntry: 'DINNER', location: 'ZISKAND LOUNGE' },
-    { time: '7:30 PM', tableEntry: 'ECHO 3D WORKSHOP', location: 'TBD' },
-    {
-      time: '8:30 PM',
-      tableEntry: 'INTRO TO TECHNICAL INTERVIEWS WORKSHOP',
-      location: 'TERRANCE',
-    },
-    { time: '', tableEntry: 'JEOPARDY', location: 'GSU BACKCOURT' },
-    { time: '9:30 PM', tableEntry: 'MARIO KART/SMASH', location: 'TERRANCE' },
-    {
-      time: '10:00 PM',
-      tableEntry: 'SLEEP SPACES OPEN',
-      location: 'GSU BASEMENT',
-    },
-    { time: '10:30 PM', tableEntry: 'KAREOKE', location: 'TERRANCE' },
-    {
-      time: '',
-      tableEntry: 'BALLOON ANIMALS',
-      location: 'GSU BACKCOURT',
     },
   ];
   return (
@@ -158,7 +112,7 @@ export default function Schedule() {
           alt="cloudleft"
         />
       </div>
-      <img
+      {/* <img
         src={schedule}
         className="max-sm:hidden my-[2vh]"
         alt="schedule"
@@ -168,12 +122,12 @@ export default function Schedule() {
         src={mobileSchedule}
         className="sm:hidden max-sm:scale-125 p-10 my-[100px] "
         alt="mobile schedule"
-      />
+      /> */}
 
-      {/* <div className="w-full flex flex-row justify-around">
+      <div className="w-full flex flex-col md:flex-row justify-around">
         <ScheduleComponent title="Saturday" data={saturday} />
-        <ScheduleComponent title="Sunday" data={data} /> 
-      </div> */}
+        <ScheduleComponent title="Sunday" data={sunday} />
+      </div>
 
       <img
         src={cloudtop}
