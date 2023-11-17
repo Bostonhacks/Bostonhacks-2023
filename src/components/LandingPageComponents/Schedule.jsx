@@ -30,7 +30,7 @@ export default function Schedule() {
     },
     { time: '11:50 PM', tableEntry: 'INTRO TO GITHUB', location: 'TERRACE' },
     { time: '12:00 PM', tableEntry: 'LUNCH BREAK', location: 'ZISKAND LOUNGE' },
-    { time: '1:00 PM', tableEntry: 'API 101', location: 'TERRACE' },
+    { time: '1:00 PM', tableEntry: 'API 101 BY POSTMAN', location: 'TERRACE' },
     {
       time: '',
       tableEntry: 'INTRO TO WEB DEV',
@@ -39,7 +39,7 @@ export default function Schedule() {
     { time: '2:00 PM', tableEntry: 'FIGMA WORKSHOP', location: 'TERRACE' },
     {
       time: '',
-      tableEntry: 'ETHICAL AI',
+      tableEntry: 'ALGORITHMIC FAIRNESS & ETHICAL AI',
       location: 'GSU BACKCOURT',
     },
     {
@@ -47,14 +47,22 @@ export default function Schedule() {
       tableEntry: 'WEB DEV (INTERMEDIATE)',
       location: 'GSU BACKCOURT',
     },
-    { time: '4:00 PM', tableEntry: 'UNITY WORKSHOP', location: 'TERRACE' },
+    {
+      time: '4:00 PM',
+      tableEntry: 'DISCOVER THE WORLD OF UNITY',
+      location: 'TERRACE',
+    },
     {
       time: '',
-      tableEntry: 'INTRO TO AI/ML',
+      tableEntry: 'WEBSCRAPING WORKSHOP',
       location: 'GSU BACKCOURT',
     },
     { time: '5:00 PM', tableEntry: 'RESUME WORKSHOP', location: 'TERRACE' },
-    { time: '', tableEntry: 'MLH WORKSHOP', location: 'GSU BACKCOURT' },
+    {
+      time: '',
+      tableEntry: 'MLH: MS PAINT BOB ROSS',
+      location: 'GSU BACKCOURT',
+    },
     { time: '6:30 PM', tableEntry: 'DINNER', location: 'ZISKAND LOUNGE' },
     { time: '7:30 PM', tableEntry: 'ECHO 3D WORKSHOP', location: 'TERRACE' },
     {
@@ -63,11 +71,11 @@ export default function Schedule() {
       location: 'TERRACE',
     },
     { time: '', tableEntry: 'JEOPARDY', location: 'GSU BACKCOURT' },
-    { time: '9:30 PM', tableEntry: 'MARIO KART/SMASH', location: 'TERRACE' },
+    { time: '9:30 PM', tableEntry: 'VIDEO GAMES', location: 'TERRACE' },
     { time: '10:30 PM', tableEntry: 'KAREOKE', location: 'TERRACE' },
     {
       time: '',
-      tableEntry: 'BALLOON ANIMALS',
+      tableEntry: 'BALLOON ANIMAL WORKSHOP',
       location: 'GSU BACKCOURT',
     },
   ];
@@ -85,6 +93,11 @@ export default function Schedule() {
     },
     {
       time: '10:30 AM',
+      tableEntry: 'SUBMISSIONS DUE',
+      location: '',
+    },
+    {
+      time: '',
       tableEntry: 'SURPRISE WORKSHOP',
       location: 'METCALF BALROOM',
     },
