@@ -69,7 +69,7 @@ const WhyUs = () => {
         <p className="text-xs lg:text-2xl z-10">We welcome any questions or</p>
         <p className="text-xs lg:text-2xl z-10">special requests. Please email us at</p>
         <h1 className="font-misterpixel font-normal pt-2 lg:py-10 text-sm lg:text-3xl z-10">
-          contact@bostonhacks.io
+          contact@bostonhacks.org
         </h1>
       </div>
     </div>
